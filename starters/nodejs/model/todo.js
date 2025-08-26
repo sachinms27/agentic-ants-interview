@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const meetingNoteSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
@@ -31,4 +31,4 @@ const meetingNoteSchema = new mongoose.Schema({
 
 const MeetingNote = mongoose.model('MeetingNote', meetingNoteSchema);
 
-module.exports = MeetingNote;
+export default MeetingNote;

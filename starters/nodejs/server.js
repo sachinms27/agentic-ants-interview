@@ -1,11 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const { v4: uuidv4 } = require('uuid');
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
+import { mcpClient } from './mcp-client.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const MeetingNote = require('./model/todo');
+import MeetingNote from './model/todo.js';
 
 // Middleware
 app.use(cors());
@@ -15,8 +16,12 @@ app.use(express.json());
 let testNotes = [];
 
 // Load test data from file
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 try {
   const testDataPath = path.join(__dirname, '../../test-data/meeting-notes.json');
@@ -38,18 +43,18 @@ const connectDB = async () => {
     console.log('Connected to MongoDB successfully');
     
     // Initialize database with test data if empty
-    const count = await MeetingNote.countDocuments();
-    if (count === 0 && testNotes.length > 0) {
-      const notesToInsert = testNotes.map(note => ({
-        ...note,
-        meetingDate: new Date(note.meetingDate),
-        followUpDate: new Date(note.followUpDate),
-        createdAt: new Date(note.createdAt),
-        updatedAt: new Date(note.updatedAt)
-      }));
-      await MeetingNote.insertMany(notesToInsert);
-      console.log('Initialized database with test meeting notes');
-    }
+    // const count = await MeetingNote.countDocuments();
+    // if (count === 0 && testNotes.length > 0) {
+    //   const notesToInsert = testNotes.map(note => ({
+    //     ...note,
+    //     meetingDate: new Date(note.meetingDate),
+    //     followUpDate: new Date(note.followUpDate),
+    //     createdAt: new Date(note.createdAt),
+    //     updatedAt: new Date(note.updatedAt)
+    //   }));
+    //   await MeetingNote.insertMany(notesToInsert);
+    //   console.log('Initialized database with test meeting notes');
+    // }
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
     console.log('Running in fallback mode with in-memory storage');
@@ -68,7 +73,7 @@ const getCurrentTimestamp = () => new Date().toISOString();
 
 app.get('/api', (req, res) => {
   res.json({ 
-    message: 'Real Estate Meeting Notes API', 
+    message: 'Real Estate Meeting Notes API with MCP Integration', 
     endpoints: [
       'GET /api/notes',
       'GET /api/notes/:id',
@@ -76,7 +81,17 @@ app.get('/api', (req, res) => {
       'PUT /api/notes/:id',
       'DELETE /api/notes/:id',
       'POST /api/notes/bulk-import',
-      'POST /api/notes/search'
+      'POST /api/notes/search',
+      'POST /api/notes/similar/:id',
+      'POST /api/notes/filter'
+    ],
+    mcpEnabled: mcpClient.isConnected,
+    features: [
+      'Enhanced semantic search with scoring',
+      'Similar client matching',
+      'Advanced filtering',
+      'Intent analysis',
+      'Relevance explanations'
     ]
   });
 });
@@ -267,24 +282,87 @@ app.post('/api/notes/bulk-import', async (req, res) => {
   }
 });
 
-// Requirement 4: Natural Language Search
+// Requirement 4: Enhanced Natural Language Search with MCP
 app.post('/api/notes/search', async (req, res) => {
   try {
-    const { query } = req.body;
+    const { query, limit = 10 } = req.body;
     
     if (!query) {
       return res.status(400).json({ error: 'Query is required' });
     }
     
+    // Try MCP enhanced search first
+    if (mcpClient.isConnected) {
+      try {
+        const mcpResults = await mcpClient.semanticSearch(query, limit);
+        return res.status(200).json({
+          ...mcpResults,
+          enhanced: true,
+          source: 'mcp'
+        });
+      } catch (mcpError) {
+        console.warn('MCP search failed, falling back to basic search:', mcpError.message);
+      }
+    }
+    
+    // Fallback to basic search
     if (useInMemory) {
       const results = performInMemorySearch(query, inMemoryNotes);
-      return res.status(200).json(results);
+      return res.status(200).json({
+        results: results.slice(0, limit),
+        totalResults: results.length,
+        enhanced: false,
+        source: 'memory'
+      });
     }
     
     const results = await performDatabaseSearch(query);
-    res.status(200).json(results);
+    res.status(200).json({
+      results: results.slice(0, limit),
+      totalResults: results.length,
+      enhanced: false,
+      source: 'database'
+    });
   } catch (error) {
     console.error('Error searching notes:', error);
+    res.status(500).json({ error: 'Something went wrong!' });
+  }
+});
+
+// New MCP-powered endpoints
+app.post('/api/notes/similar/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { limit = 5 } = req.body;
+    
+    if (!mcpClient.isConnected) {
+      return res.status(503).json({ error: 'Enhanced search service unavailable' });
+    }
+    
+    const results = await mcpClient.findSimilarClients(id, limit);
+    res.status(200).json(results);
+  } catch (error) {
+    console.error('Error finding similar clients:', error);
+    res.status(500).json({ error: 'Something went wrong!' });
+  }
+});
+
+app.post('/api/notes/filter', async (req, res) => {
+  try {
+    const { filters } = req.body;
+    
+    if (!filters) {
+      return res.status(400).json({ error: 'Filters are required' });
+    }
+    
+    if (!mcpClient.isConnected) {
+      return res.status(503).json({ error: 'Enhanced search service unavailable' });
+    }
+    
+    const results = await mcpClient.advancedFilter(filters);
+    res.status(200).json(results);
+  } catch (error) {
+    console.error('Error applying advanced filters:', error);
     res.status(500).json({ error: 'Something went wrong!' });
   }
 });
@@ -452,8 +530,16 @@ app.use((err, req, res, next) => {
 // Start server
 app.listen(PORT, async () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📝 Notes API Challenge - Node.js Starter`);
+  console.log(`📝 Notes API Challenge - Node.js Starter with MCP Integration`);
   
   // Connect to database
   await connectDB();
+  
+  // Initialize MCP client
+  try {
+    await mcpClient.connect();
+    console.log(`🔍 Enhanced search powered by MCP is available`);
+  } catch (error) {
+    console.warn(`⚠️  MCP connection failed, using basic search: ${error.message}`);
+  }
 });
