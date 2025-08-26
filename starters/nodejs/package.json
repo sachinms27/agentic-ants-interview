@@ -1,6 +1,6 @@
 {
   "name": "real-estate-notes-api-nodejs",
-  "version": "1.0.0", 
+  "version": "1.0.0",
   "description": "Real Estate Notes API Challenge - Node.js Starter with Natural Language Search",
   "main": "server.js",
   "scripts": {
@@ -8,21 +8,29 @@
     "dev": "nodemon server.js || node server.js",
     "test": "echo \"Implement your tests here\" && exit 0"
   },
-  "keywords": ["real-estate", "notes", "natural-language-search", "ai", "nodejs", "express"],
+  "keywords": [
+    "real-estate",
+    "notes",
+    "natural-language-search",
+    "ai",
+    "nodejs",
+    "express"
+  ],
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5", 
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.0.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.0"
   },
   "optionalDependencies": {
-    "openai": "^4.20.0",
-    "cohere-ai": "^7.0.0",
     "@huggingface/inference": "^2.6.0",
+    "cohere-ai": "^7.0.0",
+    "compromise": "^14.0.0",
     "natural": "^6.0.0",
-    "compromise": "^14.0.0"
+    "openai": "^4.20.0"
   },
   "engines": {
     "node": ">=16.0.0"
