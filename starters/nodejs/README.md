@@ -1,199 +1,101 @@
 # Node.js/Express Starter - Real Estate Notes API
 
-This starter provides a Node.js backend with Express.js for building the Real Estate Notes application with natural language search capabilities.
+Minimal Node.js starter for building the Real Estate Notes application with natural language search.
 
 ## 🎯 Challenge Focus
 
-Build a **natural language search system** that can understand queries like:
-- "Show me all clients looking for 3-bedroom homes under $500k"
-- "Find first-time buyers who need good schools"
-- "Which clients are ready to buy immediately?"
+**Build natural language search** that understands queries like:
+- "3-bedroom homes under $500k"
+- "first-time buyers with pre-approval"
+- "clients interested in Westside neighborhood"
 
 ## 🚀 Quick Start
 
 ```bash
-# Install dependencies
 npm install
-
-# Start the server (with nodemon if available)
-npm run dev
-
-# Or start without auto-reload
-npm start
+npm run dev  # or npm start
 ```
 
-## 📊 Load Test Data
+## 📊 Test Data
 
-The server includes 2 sample notes, but for comprehensive testing:
+- **2 sample notes** included to get started
+- **Full dataset:** Import from `/test-data/meeting-notes.json` (20+ realistic client notes)
+- **Import endpoint:** You'll need to build `POST /api/notes/bulk-import`
 
-1. **Start your server:** `npm run dev`
-2. **Import full dataset:** 
-   ```bash
-   curl -X POST http://localhost:3000/api/notes/bulk-import \
-     -H "Content-Type: application/json" \
-     -d @../../test-data/meeting-notes.json
-   ```
-3. **Verify import:** Visit `http://localhost:3000/api/notes`
+## 🔧 What You Need to Build
 
-This loads 20+ realistic real estate meeting notes with diverse client scenarios.
-
-## 🔧 API Endpoints
-
-### Core CRUD Operations
-- `GET /api/notes` - List all notes (with pagination)
-- `GET /api/notes/:id` - Get specific note
-- `POST /api/notes` - Create new meeting note
-- `PUT /api/notes/:id` - Update existing note
-- `DELETE /api/notes/:id` - Delete note
-
-### Primary Feature (Focus Here!)
-- `POST /api/notes/search` - **Natural language search**
-  ```json
-  {
-    "query": "clients looking for 3 bed 2 bath homes in Westside under 600k"
-  }
-  ```
-
-### Utility
-- `POST /api/notes/bulk-import` - Import test data from JSON file
-
-## 📋 Data Structure
-
-Each meeting note contains:
-
-```javascript
-{
-  id: "note-001",
-  clientName: "Michael and Sarah Johnson",
-  meetingDate: "2025-01-10T14:00:00Z",
-  contactInfo: { phone: "555-0123", email: "mjohnson@email.com" },
-  meetingType: "Initial Consultation",
-  notes: "First-time homebuyers, both teachers...", // Free-form notes
-  requirements: {
-    propertyType: "Single Family",
-    bedrooms: 3,
-    bathrooms: 2,
-    minPrice: 400000,
-    maxPrice: 480000,
-    preferredAreas: ["Westside", "School District 23"],
-    mustHaves: ["yard", "good schools", "safe neighborhood"],
-    niceToHaves: ["garage", "updated kitchen", "nursery potential"],
-    dealBreakers: ["busy street", "major repairs needed", "bad school zone"]
-  },
-  timeline: "ASAP",
-  preApproved: true,
-  followUpDate: "2025-01-15",
-  tags: ["first-time buyer", "expecting parents", "teachers", "urgent"],
-  createdAt: "2025-01-10T14:00:00Z",
-  updatedAt: "2025-01-10T14:00:00Z"
-}
+### Required API Endpoints
 ```
+GET    /api/notes           # List all notes
+GET    /api/notes/:id       # Get specific note  
+POST   /api/notes           # Create new note
+PUT    /api/notes/:id       # Update note
+DELETE /api/notes/:id       # Delete note
+
+POST   /api/notes/search    # 🎯 PRIMARY FEATURE - Natural language search
+POST   /api/notes/bulk-import # Bulk import test data
+```
+
+### Data Structure Design
+The starter includes basic sample data. You need to:
+- Design proper data structures for complex real estate requirements
+- Handle nested data (contact info, property requirements, preferences)  
+- Support structured search on price ranges, locations, property features
+
+View the full data structure in `/test-data/meeting-notes.json`
 
 ## 🧠 Natural Language Search Implementation
 
-Your main task is implementing the search endpoint at `POST /api/notes/search`. Consider these approaches:
+Your **primary task** is implementing intelligent search at `POST /api/notes/search`.
 
-### Option 1: Embedding-Based Search
-```javascript
-// Use OpenAI embeddings or local models
-// Convert notes to vector embeddings
-// Use cosine similarity for matching
-```
+**Example queries to handle:**
+- "3 bed 2 bath under 500k"
+- "first-time buyers with pre-approval"
+- "families with kids looking for good schools"
+- "investment property buyers"
+- "urgent buyers ready to purchase immediately"
 
-### Option 2: LLM-Powered Search  
-```javascript
-// Use OpenAI/Anthropic API
-// Send structured prompts with notes and query
-// Parse LLM response for relevant note IDs
-```
+**Implementation approaches:**
+- Embeddings (OpenAI, Cohere, local models)
+- LLM-powered (GPT, Claude with structured prompts)
+- Entity extraction + rules (parse requirements, match criteria)
+- Hybrid approach (combine techniques)
 
-### Option 3: Entity Extraction + Rules
-```javascript
-// Extract entities: price ranges, bedroom counts, locations
-// Apply rule-based matching on structured fields
-// Combine with keyword search on notes text
-```
+## 💡 Node.js Benefits
 
-### Option 4: Hybrid Approach
-```javascript
-// Combine multiple techniques
-// Use structured matching for exact criteria
-// Use semantic search for contextual understanding
-```
+- **Rapid Development:** Quick prototyping with familiar JavaScript
+- **JSON Native:** Easy handling of complex nested data
+- **Rich Ecosystem:** Large npm selection for AI/ML libraries
 
-## 🧪 Test Your Implementation
+## 📦 Optional Dependencies
 
-Try these queries after importing test data:
-
+Install AI libraries as needed:
 ```bash
-# Price and property queries
-curl -X POST http://localhost:3000/api/notes/search \
-  -H "Content-Type: application/json" \
-  -d '{"query": "3 bed 2 bath under 500k"}'
-
-# Client type queries  
-curl -X POST http://localhost:3000/api/notes/search \
-  -H "Content-Type: application/json" \
-  -d '{"query": "first-time buyers with pre-approval"}'
-
-# Location queries
-curl -X POST http://localhost:3000/api/notes/search \
-  -H "Content-Type: application/json" \
-  -d '{"query": "clients interested in Westside neighborhood"}'
-
-# Urgency queries
-curl -X POST http://localhost:3000/api/notes/search \
-  -H "Content-Type: application/json" \
-  -d '{"query": "urgent buyers ready to purchase immediately"}'
+npm install openai          # OpenAI API
+npm install cohere-ai       # Cohere embeddings  
+npm install natural         # NLP processing
+npm install compromise      # Text analysis
 ```
 
-## 💡 Node.js Advantages
+## 📝 Getting Started
 
-- **Rapid Prototyping:** Quick to get started with familiar JavaScript
-- **JSON Native:** Easy handling of complex nested data structures  
-- **Rich Ecosystem:** Large npm package selection for AI/ML libraries
-- **Async Support:** Natural fit for API calls to external AI services
-- **Flexibility:** Dynamic typing allows for quick experimentation
+1. **Understand the data:** Check sample notes and `/test-data/meeting-notes.json`
+2. **Build CRUD APIs:** Implement basic endpoints first
+3. **Focus on search:** This is the primary evaluation criteria
+4. **Import test data:** Build bulk import to load the full dataset
+5. **Test thoroughly:** Try various natural language queries
 
-## 📦 Dependencies
+## ⏱️ Time Management
 
-### Required
-- `express` - Web server framework
-- `cors` - Cross-origin resource sharing
-- `uuid` - Generate unique note IDs
+- **0-15 min:** Set up basic CRUD endpoints
+- **15-35 min:** Focus on natural language search implementation
+- **35-45 min:** Test with realistic queries, refine results
 
-### Optional (for AI features)
-Install as needed:
-```bash
-npm install openai          # OpenAI API integration
-npm install cohere-ai       # Cohere embeddings
-npm install natural         # Natural language processing
-npm install compromise      # Text analysis and NLP
-```
+## 🔍 Success Criteria
 
-## 🎯 Implementation Tips
+Your search will be judged on:
+- **Understanding queries:** Does it parse intent correctly?
+- **Result relevance:** Are returned clients actually good matches?
+- **Implementation approach:** Smart use of AI/NLP techniques
 
-1. **Start Simple:** Begin with keyword matching, then enhance
-2. **Use JavaScript Strengths:** Leverage object manipulation and async capabilities
-3. **Test Frequently:** Use the provided test data extensively
-4. **Focus on Search:** The search quality is the primary evaluation criteria
-5. **Document Approach:** Be ready to explain your implementation choice
-
-## 🔍 Search Quality Criteria
-
-Your search will be evaluated on:
-- **Understanding Intent:** Does it grasp what the user is looking for?
-- **Result Relevance:** Are the returned clients actually good matches?
-- **Ranking Quality:** Are results ordered by relevance?
-- **Query Handling:** Does it handle various query types and phrasings?
-- **Performance:** Reasonable response times for the dataset size
-
-## 📝 Next Steps
-
-1. **Implement the search endpoint** in `server.js`
-2. **Choose your approach** (embeddings, LLM, rules, or hybrid)
-3. **Import test data** using the bulk import endpoint
-4. **Test extensively** with various natural language queries
-5. **Optimize and refine** based on result quality
-
-Good luck! Focus on building search that actually understands and returns relevant results. 🏠🔍
+Good luck! Focus on building search that actually works. 🏠🔍
