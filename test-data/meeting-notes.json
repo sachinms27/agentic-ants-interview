@@ -1,0 +1,562 @@
+[
+  {
+    "id": "note-001",
+    "clientName": "Michael and Sarah Johnson",
+    "meetingDate": "2025-01-10T14:00:00Z",
+    "contactInfo": {
+      "phone": "555-0123",
+      "email": "mjohnson@email.com"
+    },
+    "meetingType": "Initial Consultation",
+    "notes": "First-time homebuyers, both teachers in their early 30s. Have been saving for 5 years and are pre-approved for $480k. Looking for a starter home to raise a family. Currently renting a 2-bedroom apartment but expecting their first child in 6 months. Very concerned about school districts - want to be in the Westside Elementary zone. Would prefer a single-family home with a yard for kids to play. Budget is tight but flexible if perfect property comes along. Both work full-time but have stable incomes. No major debt except student loans. Want to move before baby arrives.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "minPrice": 400000,
+      "maxPrice": 480000,
+      "preferredAreas": ["Westside", "School District 23"],
+      "mustHaves": ["yard", "good schools", "safe neighborhood"],
+      "niceToHaves": ["garage", "updated kitchen", "nursery potential"],
+      "dealBreakers": ["busy street", "major repairs needed", "bad school zone"]
+    },
+    "timeline": "ASAP",
+    "preApproved": true,
+    "followUpDate": "2025-01-15",
+    "tags": ["first-time buyer", "expecting parents", "teachers", "urgent"],
+    "createdAt": "2025-01-10T14:00:00Z",
+    "updatedAt": "2025-01-10T14:00:00Z"
+  },
+  {
+    "id": "note-002",
+    "clientName": "Robert Chen",
+    "meetingDate": "2025-01-12T10:30:00Z",
+    "contactInfo": {
+      "phone": "555-0234",
+      "email": "rchen@techcorp.com"
+    },
+    "meetingType": "Initial Consultation",
+    "notes": "Software engineer looking for investment property. Has significant cash reserves and wants to get into real estate investing. Already owns primary residence. Looking for multi-family properties or condos in up-and-coming neighborhoods that he can rent out. Wants positive cash flow from day one. Very analytical - wants to see rental comps, neighborhood growth data, and ROI projections for any property. Not concerned about move-in ready condition as he's handy with renovations. Prefers properties near tech companies or universities for reliable renters.",
+    "requirements": {
+      "propertyType": "Multi-family",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "minPrice": 300000,
+      "maxPrice": 600000,
+      "preferredAreas": ["University District", "Tech Corridor", "Downtown"],
+      "mustHaves": ["rental income potential", "good location", "structural soundness"],
+      "niceToHaves": ["multiple units", "parking", "low maintenance"],
+      "dealBreakers": ["negative cash flow", "major structural issues", "bad neighborhood trends"]
+    },
+    "timeline": "3-6 months",
+    "preApproved": false,
+    "followUpDate": "2025-01-20",
+    "tags": ["investor", "cash buyer", "tech professional", "analytical"],
+    "createdAt": "2025-01-12T10:30:00Z",
+    "updatedAt": "2025-01-12T10:30:00Z"
+  },
+  {
+    "id": "note-003",
+    "clientName": "Patricia and David Wilson",
+    "meetingDate": "2025-01-14T16:00:00Z",
+    "contactInfo": {
+      "phone": "555-0345",
+      "email": "wilsonfamily@home.com"
+    },
+    "meetingType": "Follow-up",
+    "notes": "Empty nesters looking to downsize from their 4-bedroom family home. Kids are in college and they want something easier to maintain. Currently in suburbs but interested in moving closer to downtown for cultural activities and restaurants. Want luxury finishes and low maintenance. Budget is flexible as they'll get significant equity from selling current home (estimated $800k). Looking for condos or townhomes with amenities like gym, pool, concierge. Must have 2 bedrooms for when kids visit and home office space since David works remotely.",
+    "requirements": {
+      "propertyType": "Condo",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "minPrice": 500000,
+      "maxPrice": 750000,
+      "preferredAreas": ["Downtown", "Arts District", "Riverfront"],
+      "mustHaves": ["luxury finishes", "building amenities", "low maintenance", "home office space"],
+      "niceToHaves": ["city views", "balcony", "garage parking", "concierge"],
+      "dealBreakers": ["high HOA fees", "older building", "no elevator", "poor management"]
+    },
+    "timeline": "6+ months",
+    "preApproved": false,
+    "followUpDate": "2025-01-25",
+    "tags": ["empty nesters", "downsizing", "luxury", "contingent sale"],
+    "createdAt": "2025-01-14T16:00:00Z",
+    "updatedAt": "2025-01-14T16:00:00Z"
+  },
+  {
+    "id": "note-004",
+    "clientName": "Jennifer Martinez",
+    "meetingDate": "2025-01-15T11:00:00Z",
+    "contactInfo": {
+      "phone": "555-0456",
+      "email": "jmartinez@email.com"
+    },
+    "meetingType": "Property Tour",
+    "notes": "Single professional, nurse at Children's Hospital. Looking for her first home after years of apartment living. Wants something modern and move-in ready as she works long shifts and doesn't have time for renovations. Interested in townhomes or condos with garage parking for her car. Must be pet-friendly as she has two cats. Prefers newer construction with energy efficient features. Budget is conservative as she wants to maintain emergency fund. Showed her 3 properties today - loved the Maple Street townhome but concerned about HOA fees.",
+    "requirements": {
+      "propertyType": "Townhouse",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "minPrice": 350000,
+      "maxPrice": 450000,
+      "preferredAreas": ["Medical District", "Midtown", "Riverside"],
+      "mustHaves": ["pet-friendly", "garage", "move-in ready", "low maintenance"],
+      "niceToHaves": ["modern finishes", "energy efficient", "near hospital", "quiet"],
+      "dealBreakers": ["high HOA", "major repairs needed", "no pets allowed", "long commute"]
+    },
+    "timeline": "1-3 months",
+    "preApproved": true,
+    "followUpDate": "2025-01-18",
+    "tags": ["first-time buyer", "healthcare worker", "pet owner", "single professional"],
+    "createdAt": "2025-01-15T11:00:00Z",
+    "updatedAt": "2025-01-15T11:00:00Z"
+  },
+  {
+    "id": "note-005",
+    "clientName": "Rajesh and Priya Patel",
+    "meetingDate": "2025-01-16T13:30:00Z",
+    "contactInfo": {
+      "phone": "555-0567",
+      "email": "rpatel@business.com"
+    },
+    "meetingType": "Initial Consultation",
+    "notes": "Young couple, both software developers at major tech companies. Looking for their first home together after getting married last year. Want to be strategic about their purchase as they may relocate for work in 3-5 years. Interested in areas with good resale value. Both have high incomes but also high student loan payments. Pre-approved but want to stay well under their max to maintain savings rate. Looking for 3-bedroom home in family-friendly neighborhood even though no kids yet. Want good schools for future and resale value.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "minPrice": 420000,
+      "maxPrice": 550000,
+      "preferredAreas": ["Tech Corridor", "Westside", "Maple Grove"],
+      "mustHaves": ["good schools", "safe neighborhood", "resale potential", "modern updates"],
+      "niceToHaves": ["home office", "yard", "garage", "updated kitchen"],
+      "dealBreakers": ["major repairs", "bad school district", "declining neighborhood", "overpriced"]
+    },
+    "timeline": "1-3 months",
+    "preApproved": true,
+    "followUpDate": "2025-01-22",
+    "tags": ["newlyweds", "tech professionals", "strategic buyers", "future planning"],
+    "createdAt": "2025-01-16T13:30:00Z",
+    "updatedAt": "2025-01-16T13:30:00Z"
+  },
+  {
+    "id": "note-006",
+    "clientName": "Amanda Thompson",
+    "meetingDate": "2025-01-17T09:00:00Z",
+    "contactInfo": {
+      "phone": "555-0678",
+      "email": "athompson@email.com"
+    },
+    "meetingType": "Offer Discussion",
+    "notes": "Divorced mother of two teenagers looking to buy a home in their current school district so kids don't have to change schools. Has been renting since divorce was finalized 2 years ago and ready to build equity again. Budget is limited due to single income but receives child support. Must stay in Lincoln High School zone for her son who's a senior. Needs at least 3 bedrooms so kids can have their own rooms. Very motivated to make an offer on the Oak Street property we showed last week. Concerned about inspection items but willing to negotiate.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "minPrice": 300000,
+      "maxPrice": 400000,
+      "preferredAreas": ["Lincoln School Zone", "Eastside", "Family neighborhoods"],
+      "mustHaves": ["good schools", "safe neighborhood", "3+ bedrooms", "affordable"],
+      "niceToHaves": ["yard", "garage", "updated kitchen", "basement"],
+      "dealBreakers": ["wrong school zone", "unsafe area", "over budget", "needs major work"]
+    },
+    "timeline": "ASAP",
+    "preApproved": true,
+    "followUpDate": "2025-01-19",
+    "tags": ["single parent", "school district priority", "motivated buyer", "budget conscious"],
+    "createdAt": "2025-01-17T09:00:00Z",
+    "updatedAt": "2025-01-17T09:00:00Z"
+  },
+  {
+    "id": "note-007",
+    "clientName": "James and Linda Foster",
+    "meetingDate": "2025-01-18T15:00:00Z",
+    "contactInfo": {
+      "phone": "555-0789",
+      "email": "foster.retirement@email.com"
+    },
+    "meetingType": "Initial Consultation",
+    "notes": "Retired couple looking to relocate from the East Coast to be closer to grandchildren. Want a smaller home that's easy to maintain but still has space for family visits. Health considerations important - prefer single level living or master on main floor. Budget is comfortable from retirement savings and sale of previous home. Interested in active adult communities or quiet neighborhoods. Want to be within 30 minutes of their daughter's family. Not in a rush as they're researching the area thoroughly first.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "minPrice": 400000,
+      "maxPrice": 600000,
+      "preferredAreas": ["Active Adult Communities", "Quiet neighborhoods", "Near family"],
+      "mustHaves": ["single level or master on main", "low maintenance", "safe", "good healthcare nearby"],
+      "niceToHaves": ["guest room", "community amenities", "garage", "nice views"],
+      "dealBreakers": ["too much maintenance", "unsafe area", "too far from family", "stairs required"]
+    },
+    "timeline": "6+ months",
+    "preApproved": false,
+    "followUpDate": "2025-02-01",
+    "tags": ["retirees", "relocating", "grandparents", "accessibility needs"],
+    "createdAt": "2025-01-18T15:00:00Z",
+    "updatedAt": "2025-01-18T15:00:00Z"
+  },
+  {
+    "id": "note-008",
+    "clientName": "Carlos Rodriguez",
+    "meetingDate": "2025-01-19T12:00:00Z",
+    "contactInfo": {
+      "phone": "555-0890",
+      "email": "crodriguez@construction.com"
+    },
+    "meetingType": "Follow-up",
+    "notes": "Contractor who flips houses looking for next project. Has cash available and moves quickly on good deals. Specializes in older homes that need complete renovation. Not interested in move-in ready properties - wants something with problems that scares away other buyers. Excellent at estimating renovation costs and timeline. Has crew ready to start immediately. Looking for properties under market value that can be transformed and sold for profit. Prefers traditional neighborhoods with good bones.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "minPrice": 150000,
+      "maxPrice": 300000,
+      "preferredAreas": ["Established neighborhoods", "Traditional areas", "Good bones"],
+      "mustHaves": ["solid structure", "good location", "renovation potential", "below market price"],
+      "niceToHaves": ["unique character", "larger lot", "detached garage", "period details"],
+      "dealBreakers": ["structural damage", "bad location", "overpriced", "foundation issues"]
+    },
+    "timeline": "ASAP",
+    "preApproved": false,
+    "followUpDate": "2025-01-24",
+    "tags": ["cash buyer", "investor", "contractor", "house flipper"],
+    "createdAt": "2025-01-19T12:00:00Z",
+    "updatedAt": "2025-01-19T12:00:00Z"
+  },
+  {
+    "id": "note-009",
+    "clientName": "Lisa and Mark Anderson",
+    "meetingDate": "2025-01-20T10:00:00Z",
+    "contactInfo": {
+      "phone": "555-0901",
+      "email": "andersonfamily@email.com"
+    },
+    "meetingType": "Property Tour",
+    "notes": "Growing family with 3 young children (ages 2, 5, 7) outgrowing their current 3-bedroom home. Need more space and better layout. Both parents work from home part-time so need dedicated office spaces. Kids are active and need large yard for playing. Must be in top-rated school district. Want quiet street with other families. Showed them the Elmwood property - loved the layout and yard but concerned about the price. Need to sell current home first but have backup cash from family if needed.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "minPrice": 500000,
+      "maxPrice": 650000,
+      "preferredAreas": ["Top school districts", "Family neighborhoods", "Quiet streets"],
+      "mustHaves": ["4+ bedrooms", "large yard", "excellent schools", "home office space"],
+      "niceToHaves": ["playroom", "updated kitchen", "master suite", "garage"],
+      "dealBreakers": ["busy street", "small yard", "poor schools", "open floor plan unsuitable for WFH"]
+    },
+    "timeline": "3-6 months",
+    "preApproved": true,
+    "followUpDate": "2025-01-26",
+    "tags": ["growing family", "work from home", "school priority", "contingent sale"],
+    "createdAt": "2025-01-20T10:00:00Z",
+    "updatedAt": "2025-01-20T10:00:00Z"
+  },
+  {
+    "id": "note-010",
+    "clientName": "Susan Kim",
+    "meetingDate": "2025-01-21T14:30:00Z",
+    "contactInfo": {
+      "phone": "555-1012",
+      "email": "skim@marketing.com"
+    },
+    "meetingType": "Initial Consultation",
+    "notes": "Marketing executive relocating for new job. Company is providing relocation assistance and temporary housing for 3 months. Needs to find permanent housing quickly. Single, no kids, but has elderly mother who may move in later so wants flexible space. Interested in modern condos or townhomes with amenities. Values walkability and proximity to restaurants, shopping, entertainment. Budget is generous due to salary increase with new position. Wants luxury finishes and high-end appliances.",
+    "requirements": {
+      "propertyType": "Condo",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "minPrice": 400000,
+      "maxPrice": 600000,
+      "preferredAreas": ["Downtown", "Urban core", "Walkable neighborhoods"],
+      "mustHaves": ["modern", "luxury finishes", "building amenities", "walkable"],
+      "niceToHaves": ["city views", "concierge", "gym", "rooftop deck"],
+      "dealBreakers": ["suburban location", "older building", "no amenities", "long commute"]
+    },
+    "timeline": "ASAP",
+    "preApproved": true,
+    "followUpDate": "2025-01-23",
+    "tags": ["relocating", "executive", "urgent", "luxury seeker"],
+    "createdAt": "2025-01-21T14:30:00Z",
+    "updatedAt": "2025-01-21T14:30:00Z"
+  },
+  {
+    "id": "note-011",
+    "clientName": "Tom and Betty Williams",
+    "meetingDate": "2025-01-22T11:15:00Z",
+    "contactInfo": {
+      "phone": "555-1123",
+      "email": "twilliams@email.com"
+    },
+    "meetingType": "Offer Discussion",
+    "notes": "Local business owners (restaurant) looking for commercial-residential property. Want to live above or adjacent to their business expansion. Interested in mixed-use properties or areas zoned for commercial use. Have specific needs due to restaurant business - need parking for customers, appropriate zoning, and living space that's separate from business noise. Ready to make cash offer on right property. Looking at the Main Street building that has retail downstairs and apartment upstairs.",
+    "requirements": {
+      "propertyType": "Mixed-use",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "minPrice": 400000,
+      "maxPrice": 700000,
+      "preferredAreas": ["Commercial districts", "Main Street", "Mixed-use zones"],
+      "mustHaves": ["commercial zoning", "separate living space", "parking", "foot traffic area"],
+      "niceToHaves": ["corner lot", "signage opportunities", "outdoor seating potential", "storage"],
+      "dealBreakers": ["zoning restrictions", "no parking", "residential only", "poor location for business"]
+    },
+    "timeline": "1-3 months",
+    "preApproved": false,
+    "followUpDate": "2025-01-25",
+    "tags": ["business owners", "mixed-use", "cash buyers", "zoning specific"],
+    "createdAt": "2025-01-22T11:15:00Z",
+    "updatedAt": "2025-01-22T11:15:00Z"
+  },
+  {
+    "id": "note-012",
+    "clientName": "Kevin O'Brien",
+    "meetingDate": "2025-01-23T16:45:00Z",
+    "contactInfo": {
+      "phone": "555-1234",
+      "email": "kobrien@email.com"
+    },
+    "meetingType": "Follow-up",
+    "notes": "Recently divorced, splitting assets with ex-spouse. Has teenage daughter who stays with him every other week. Needs 2-bedroom place in good school district but doesn't want to overspend during transitional period. Currently staying with brother but needs own place soon. Credit is good but income is lower than before due to alimony payments. Looking for value properties that might need cosmetic work. Handy with repairs and has time to do improvements. Wants to rebuild financial stability.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "minPrice": 250000,
+      "maxPrice": 350000,
+      "preferredAreas": ["Good school districts", "Established neighborhoods", "Value areas"],
+      "mustHaves": ["good schools", "safe", "good bones", "affordable"],
+      "niceToHaves": ["garage", "yard", "update potential", "quiet street"],
+      "dealBreakers": ["overpriced", "major structural issues", "bad schools", "unsafe area"]
+    },
+    "timeline": "1-3 months",
+    "preApproved": true,
+    "followUpDate": "2025-01-28",
+    "tags": ["divorced", "budget conscious", "school priority", "handyman"],
+    "createdAt": "2025-01-23T16:45:00Z",
+    "updatedAt": "2025-01-23T16:45:00Z"
+  },
+  {
+    "id": "note-013",
+    "clientName": "Maria Gonzalez",
+    "meetingDate": "2025-01-24T13:00:00Z",
+    "contactInfo": {
+      "phone": "555-1345",
+      "email": "mgonzalez@email.com"
+    },
+    "meetingType": "Property Tour",
+    "notes": "First-generation home buyer, works two jobs (day job in administration, evening job as translator). Has been saving diligently for down payment. Family is very important - wants to be near her parents and siblings who live in the Hispanic community area. Needs help understanding all aspects of home buying process. Pre-approved through first-time buyer program with down payment assistance. Looking for solid starter home that won't require immediate major repairs. Very cost-conscious but also wants safe neighborhood for her and her young son.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "minPrice": 200000,
+      "maxPrice": 300000,
+      "preferredAreas": ["Hispanic community", "Near family", "Affordable neighborhoods"],
+      "mustHaves": ["safe", "affordable", "near family", "good condition"],
+      "niceToHaves": ["yard", "garage", "room to grow", "community feel"],
+      "dealBreakers": ["major repairs needed", "unsafe area", "too far from family", "over budget"]
+    },
+    "timeline": "3-6 months",
+    "preApproved": true,
+    "followUpDate": "2025-01-30",
+    "tags": ["first-generation buyer", "first-time buyer", "community important", "budget conscious"],
+    "createdAt": "2025-01-24T13:00:00Z",
+    "updatedAt": "2025-01-24T13:00:00Z"
+  },
+  {
+    "id": "note-014",
+    "clientName": "Dr. Rebecca Stone",
+    "meetingDate": "2025-01-25T08:30:00Z",
+    "contactInfo": {
+      "phone": "555-1456",
+      "email": "rstone@hospital.com"
+    },
+    "meetingType": "Initial Consultation",
+    "notes": "Pediatrician finishing residency and starting private practice. High income potential but currently has significant student loans. Looking for home that reflects professional status but also practical for her lifestyle. Works long hours so wants low maintenance. No kids yet but planning family in next few years. Wants home office space for telehealth calls. Interested in prestigious neighborhoods with other professionals. Has family money available for larger down payment to reduce monthly payments.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "minPrice": 450000,
+      "maxPrice": 650000,
+      "preferredAreas": ["Professional neighborhoods", "Prestigious areas", "Near hospital"],
+      "mustHaves": ["low maintenance", "home office", "prestigious area", "good investment"],
+      "niceToHaves": ["updated kitchen", "master suite", "garage", "landscaped yard"],
+      "dealBreakers": ["high maintenance", "poor location", "outdated systems", "bad neighborhood"]
+    },
+    "timeline": "3-6 months",
+    "preApproved": true,
+    "followUpDate": "2025-02-02",
+    "tags": ["doctor", "high income potential", "professional status", "student loans"],
+    "createdAt": "2025-01-25T08:30:00Z",
+    "updatedAt": "2025-01-25T08:30:00Z"
+  },
+  {
+    "id": "note-015",
+    "clientName": "Frank and Dorothy Miller",
+    "meetingDate": "2025-01-26T10:00:00Z",
+    "contactInfo": {
+      "phone": "555-1567",
+      "email": "miller.estate@email.com"
+    },
+    "meetingType": "Follow-up",
+    "notes": "Elderly couple looking to sell large family home and buy two smaller properties - one for them and one for their adult disabled son who currently lives with them. Want to maintain independence while staying close to provide care. Son needs accessible features and they want him in same neighborhood. They need single-level homes or homes with bedroom/bathroom on main floor. Timeline is flexible but want to coordinate both purchases with their home sale. Estate planning is important consideration.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "minPrice": 300000,
+      "maxPrice": 450000,
+      "preferredAreas": ["Same neighborhood", "Close proximity", "Accessible areas"],
+      "mustHaves": ["accessible features", "single level or main floor master", "close to each other", "safe"],
+      "niceToHaves": ["attached garage", "minimal maintenance", "good neighbors", "established area"],
+      "dealBreakers": ["stairs required", "too far apart", "high maintenance", "unsafe area"]
+    },
+    "timeline": "6+ months",
+    "preApproved": false,
+    "followUpDate": "2025-02-10",
+    "tags": ["elderly couple", "accessibility needs", "family caregiving", "multiple properties"],
+    "createdAt": "2025-01-26T10:00:00Z",
+    "updatedAt": "2025-01-26T10:00:00Z"
+  },
+  {
+    "id": "note-016",
+    "clientName": "Alex Turner",
+    "meetingDate": "2025-01-27T17:00:00Z",
+    "contactInfo": {
+      "phone": "555-1678",
+      "email": "aturner@startup.com"
+    },
+    "meetingType": "Initial Consultation",
+    "notes": "Startup founder in tech company that just received Series A funding. Income is variable but has significant equity and cash from recent funding round. Looking for modern home that can serve as occasional meeting space for small team. Wants smart home technology and high-end finishes. No kids, lifestyle focused on work and entertaining. Interested in trendy neighborhoods near other young professionals. Budget is flexible - more concerned about finding right property than staying within specific range.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "minPrice": 600000,
+      "maxPrice": 900000,
+      "preferredAreas": ["Trendy neighborhoods", "Young professional areas", "Tech corridor"],
+      "mustHaves": ["modern", "smart home ready", "entertainment space", "high-end finishes"],
+      "niceToHaves": ["home office", "outdoor entertaining", "garage", "unique features"],
+      "dealBreakers": ["outdated", "suburban feel", "no character", "poor tech infrastructure"]
+    },
+    "timeline": "1-3 months",
+    "preApproved": false,
+    "followUpDate": "2025-02-03",
+    "tags": ["startup founder", "tech entrepreneur", "high-end buyer", "modern lifestyle"],
+    "createdAt": "2025-01-27T17:00:00Z",
+    "updatedAt": "2025-01-27T17:00:00Z"
+  },
+  {
+    "id": "note-017",
+    "clientName": "Nancy and Robert Davis",
+    "meetingDate": "2025-01-28T14:15:00Z",
+    "contactInfo": {
+      "phone": "555-1789",
+      "email": "davisfamily@email.com"
+    },
+    "meetingType": "Offer Discussion",
+    "notes": "Military family being transferred to the area. Need to find housing quickly before husband's deployment. Wife will be managing household and kids alone for 8 months so wants safe neighborhood with good community support. Have VA loan pre-approval. Looking for home in established family neighborhood with good schools and military family-friendly amenities. Kids are ages 8 and 12. Ready to make competitive offer on houses that meet their needs - not looking for perfect, just functional and safe.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "minPrice": 350000,
+      "maxPrice": 500000,
+      "preferredAreas": ["Military-friendly areas", "Family neighborhoods", "Good school districts"],
+      "mustHaves": ["safe neighborhood", "good schools", "family-friendly", "move-in ready"],
+      "niceToHaves": ["yard", "garage", "community amenities", "near base"],
+      "dealBreakers": ["unsafe area", "poor schools", "needs major work", "no military families nearby"]
+    },
+    "timeline": "ASAP",
+    "preApproved": true,
+    "followUpDate": "2025-01-30",
+    "tags": ["military family", "urgent", "deployment", "family safety priority"],
+    "createdAt": "2025-01-28T14:15:00Z",
+    "updatedAt": "2025-01-28T14:15:00Z"
+  },
+  {
+    "id": "note-018",
+    "clientName": "George Thompson",
+    "meetingDate": "2025-01-29T11:30:00Z",
+    "contactInfo": {
+      "phone": "555-1890",
+      "email": "gthompson@email.com"
+    },
+    "meetingType": "Property Tour",
+    "notes": "Widower whose wife passed away 2 years ago. Adult children think he should downsize from family home but he's not ready emotionally. Looking for smaller place but still wants to feel like 'home.' Needs main floor bedroom and bathroom due to mobility issues. Budget is not a concern due to life insurance and investments. Wants to stay in same general area where he's lived for 30 years. Emotional attachment to neighborhood and community connections. Took long time to be ready for this step.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "minPrice": 300000,
+      "maxPrice": 500000,
+      "preferredAreas": ["Same neighborhood", "Familiar area", "Established community"],
+      "mustHaves": ["main floor bedroom/bath", "safe", "familiar area", "low maintenance"],
+      "niceToHaves": ["garage", "small yard", "porch", "character"],
+      "dealBreakers": ["too modern", "unfamiliar area", "stairs required", "feels impersonal"]
+    },
+    "timeline": "6+ months",
+    "preApproved": false,
+    "followUpDate": "2025-02-15",
+    "tags": ["widower", "downsizing", "mobility issues", "emotional transition"],
+    "createdAt": "2025-01-29T11:30:00Z",
+    "updatedAt": "2025-01-29T11:30:00Z"
+  },
+  {
+    "id": "note-019",
+    "clientName": "Michelle Chang",
+    "meetingDate": "2025-01-30T09:45:00Z",
+    "contactInfo": {
+      "phone": "555-1901",
+      "email": "mchang@finance.com"
+    },
+    "meetingType": "Initial Consultation",
+    "notes": "Financial advisor who understands real estate as investment. Looking for property that will appreciate well over time. Wants to buy in emerging neighborhood before prices rise significantly. Willing to do moderate renovations to add value. No kids yet but planning for future family. Wants good bones and character over move-in ready condition. Has done extensive market research and knows comparable sales. Very analytical about purchase decision and ROI projections.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "minPrice": 350000,
+      "maxPrice": 500000,
+      "preferredAreas": ["Emerging neighborhoods", "Value areas with potential", "Character areas"],
+      "mustHaves": ["good bones", "appreciation potential", "character", "solid structure"],
+      "niceToHaves": ["renovation potential", "unique features", "larger lot", "period details"],
+      "dealBreakers": ["overpriced for area", "declining neighborhood", "poor structure", "no character"]
+    },
+    "timeline": "3-6 months",
+    "preApproved": true,
+    "followUpDate": "2025-02-06",
+    "tags": ["financial advisor", "investment minded", "analytical buyer", "renovation potential"],
+    "createdAt": "2025-01-30T09:45:00Z",
+    "updatedAt": "2025-01-30T09:45:00Z"
+  },
+  {
+    "id": "note-020",
+    "clientName": "Steven and Carol Baker",
+    "meetingDate": "2025-01-31T15:20:00Z",
+    "contactInfo": {
+      "phone": "555-2012",
+      "email": "bakerfamily@email.com"
+    },
+    "meetingType": "Follow-up",
+    "notes": "Blended family with 5 kids between them (ages 6-16). Need large home to accommodate everyone. Both previously owned homes so understand process but this is more complex purchase due to family size. Need at least 4 bedrooms, preferably 5-6. Kids include different ages and needs - some need quiet study space, others need play areas. Budget is stretched due to supporting large family but both have good incomes. Must be in good school district. Looking at larger older homes that might need updates.",
+    "requirements": {
+      "propertyType": "Single Family",
+      "bedrooms": 5,
+      "bathrooms": 3,
+      "minPrice": 400000,
+      "maxPrice": 550000,
+      "preferredAreas": ["Good school districts", "Family neighborhoods", "Larger lot areas"],
+      "mustHaves": ["5+ bedrooms", "good schools", "safe neighborhood", "large common areas"],
+      "niceToHaves": ["multiple bathrooms", "basement/playroom", "large yard", "garage"],
+      "dealBreakers": ["poor schools", "too small", "unsafe area", "no common space"]
+    },
+    "timeline": "1-3 months",
+    "preApproved": true,
+    "followUpDate": "2025-02-07",
+    "tags": ["blended family", "large family", "school priority", "space needs"],
+    "createdAt": "2025-01-31T15:20:00Z",
+    "updatedAt": "2025-01-31T15:20:00Z"
+  }
+]

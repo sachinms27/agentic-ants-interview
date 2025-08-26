@@ -1,4 +1,27 @@
+# Core FastAPI dependencies
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 pydantic==2.5.0
 python-multipart==0.0.6
+
+# Optional AI/NLP dependencies for natural language search
+# Install as needed: pip install openai sentence-transformers spacy nltk
+
+# OpenAI for embeddings or LLM-powered search
+# openai==1.3.0
+
+# Hugging Face for local models
+# sentence-transformers==2.2.2
+# transformers==4.35.0
+
+# Traditional NLP libraries
+# spacy==3.7.0
+# nltk==3.8.1
+# textblob==0.17.1
+
+# Vector similarity
+# numpy==1.24.3
+# scikit-learn==1.3.0
+
+# Additional utilities
+# python-dotenv==1.0.0
