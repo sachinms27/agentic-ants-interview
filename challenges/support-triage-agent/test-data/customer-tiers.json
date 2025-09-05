@@ -1,0 +1,119 @@
+{
+  "tiers": {
+    "enterprise": {
+      "name": "Enterprise",
+      "priorityMultiplier": 1.5,
+      "slaResponseTime": "30 minutes",
+      "slaResolutionTime": "4 hours",
+      "features": [
+        "24/7 phone support",
+        "Dedicated account manager",
+        "Custom SLA",
+        "Priority routing",
+        "Executive escalation path"
+      ],
+      "minimumLTV": 100000,
+      "autoEscalate": true,
+      "dedicatedTeam": true
+    },
+    "premium": {
+      "name": "Premium",
+      "priorityMultiplier": 1.3,
+      "slaResponseTime": "2 hours",
+      "slaResolutionTime": "24 hours",
+      "features": [
+        "Priority email support",
+        "Phone support (business hours)",
+        "Account manager",
+        "Faster response times"
+      ],
+      "minimumLTV": 20000,
+      "autoEscalate": false,
+      "dedicatedTeam": false
+    },
+    "standard": {
+      "name": "Standard",
+      "priorityMultiplier": 1.0,
+      "slaResponseTime": "8 hours",
+      "slaResolutionTime": "48 hours",
+      "features": [
+        "Email support",
+        "Chat support (business hours)",
+        "Knowledge base access"
+      ],
+      "minimumLTV": 1000,
+      "autoEscalate": false,
+      "dedicatedTeam": false
+    },
+    "free": {
+      "name": "Free",
+      "priorityMultiplier": 0.8,
+      "slaResponseTime": "48 hours",
+      "slaResolutionTime": "5 days",
+      "features": [
+        "Community support",
+        "Knowledge base access",
+        "Auto-resolution for common issues"
+      ],
+      "minimumLTV": 0,
+      "autoEscalate": false,
+      "dedicatedTeam": false
+    }
+  },
+  "escalationPaths": {
+    "enterprise": [
+      "senior_support",
+      "support_manager",
+      "director_support",
+      "vp_customer_success",
+      "ceo"
+    ],
+    "premium": [
+      "support_specialist",
+      "senior_support",
+      "support_manager",
+      "director_support"
+    ],
+    "standard": [
+      "support_agent",
+      "support_specialist",
+      "senior_support"
+    ],
+    "free": [
+      "auto_response",
+      "support_agent"
+    ]
+  },
+  "ltvThresholds": [
+    {
+      "min": 0,
+      "max": 999,
+      "label": "Low Value",
+      "priorityBoost": 0
+    },
+    {
+      "min": 1000,
+      "max": 9999,
+      "label": "Standard Value",
+      "priorityBoost": 5
+    },
+    {
+      "min": 10000,
+      "max": 49999,
+      "label": "High Value",
+      "priorityBoost": 10
+    },
+    {
+      "min": 50000,
+      "max": 99999,
+      "label": "Very High Value",
+      "priorityBoost": 15
+    },
+    {
+      "min": 100000,
+      "max": null,
+      "label": "Strategic Account",
+      "priorityBoost": 20
+    }
+  ]
+}

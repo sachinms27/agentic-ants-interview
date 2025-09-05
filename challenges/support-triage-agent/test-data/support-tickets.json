@@ -1,0 +1,1330 @@
+{
+  "tickets": [
+    {
+      "id": "TICK-001",
+      "customerId": "CUST-PREMIUM-001",
+      "customerTier": "premium",
+      "customerLTV": 50000,
+      "email": "john.smith@techcorp.com",
+      "subject": "URGENT: Payment system completely broken - losing thousands per hour",
+      "message": "I've been trying to process payments for my clients all morning and nothing is working. Every transaction fails with a generic error. This is absolutely unacceptable! I'm losing thousands of dollars per hour. I've been a premium customer for 3 years and this is the worst experience I've had. If this isn't fixed immediately, I'm switching to your competitor. The error code I'm seeing is PAY_GATEWAY_500.",
+      "channel": "email",
+      "timestamp": "2025-01-15T09:30:00Z",
+      "attachments": ["error_screenshot.png", "console_log.txt"],
+      "previousTickets": 2,
+      "metadata": {
+        "browser": "Chrome 120",
+        "os": "Windows 11",
+        "location": "San Francisco, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "billing",
+        "sentiment": "angry",
+        "intent": "troubleshooting",
+        "routing": "senior_support",
+        "priority": 95
+      }
+    },
+    {
+      "id": "TICK-002",
+      "customerId": "CUST-FREE-042",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "sarah.jones@gmail.com",
+      "subject": "How do I reset my password?",
+      "message": "Hi, I forgot my password. Can you help me reset it? Thanks!",
+      "channel": "chat",
+      "timestamp": "2025-01-15T10:15:00Z",
+      "attachments": [],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Safari",
+        "os": "iOS",
+        "location": "Austin, TX"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "account",
+        "sentiment": "neutral",
+        "intent": "password_reset",
+        "routing": "auto_resolve",
+        "priority": 25
+      }
+    },
+    {
+      "id": "TICK-003",
+      "customerId": "CUST-ENTERPRISE-005",
+      "customerTier": "enterprise",
+      "customerLTV": 250000,
+      "email": "cto@fortune500.com",
+      "subject": "Security vulnerability detected in your API",
+      "message": "Our security team has identified a potential SQL injection vulnerability in your REST API endpoint /api/v2/users. This could allow unauthorized access to customer data. We need immediate confirmation that you're aware of this issue and your timeline for resolution. This is blocking our production deployment scheduled for tomorrow.",
+      "channel": "email",
+      "timestamp": "2025-01-15T08:45:00Z",
+      "attachments": ["security_report.pdf", "vulnerability_poc.txt"],
+      "previousTickets": 5,
+      "metadata": {
+        "browser": "Firefox",
+        "os": "Linux",
+        "location": "New York, NY"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "security",
+        "sentiment": "neutral",
+        "intent": "complaint",
+        "routing": "security_team",
+        "priority": 100
+      }
+    },
+    {
+      "id": "TICK-004",
+      "customerId": "CUST-STANDARD-789",
+      "customerTier": "standard",
+      "customerLTV": 5000,
+      "email": "mike@smallbiz.com",
+      "subject": "Feature request: Dark mode for dashboard",
+      "message": "Love your product! Would be amazing if you could add a dark mode option for the dashboard. I work late nights and the bright screen is hard on my eyes. I saw your competitor just launched this feature last week. Any chance this is on your roadmap?",
+      "channel": "chat",
+      "timestamp": "2025-01-15T14:20:00Z",
+      "attachments": [],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "macOS",
+        "location": "Seattle, WA"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "feature",
+        "sentiment": "satisfied",
+        "intent": "feature_request",
+        "routing": "product_team",
+        "priority": 35
+      }
+    },
+    {
+      "id": "TICK-005",
+      "customerId": "CUST-PREMIUM-017",
+      "customerTier": "premium",
+      "customerLTV": 30000,
+      "email": "finance@mediumcorp.com",
+      "subject": "Incorrect billing - charged twice for monthly subscription",
+      "message": "We've been charged twice for our monthly subscription this month. Transaction IDs: TXN-456789 and TXN-456790, both for $599. This is causing issues with our accounting. Please refund the duplicate charge immediately and confirm the correction.",
+      "channel": "email",
+      "timestamp": "2025-01-15T11:00:00Z",
+      "attachments": ["bank_statement.pdf"],
+      "previousTickets": 3,
+      "metadata": {
+        "browser": "Edge",
+        "os": "Windows 10",
+        "location": "Chicago, IL"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "billing",
+        "sentiment": "frustrated",
+        "intent": "refund",
+        "routing": "finance_senior",
+        "priority": 80
+      }
+    },
+    {
+      "id": "TICK-006",
+      "customerId": "CUST-FREE-198",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "student@university.edu",
+      "subject": "Is there a student discount?",
+      "message": "Hi! I'm a computer science student and would love to use your pro features for my thesis project. Do you offer any student discounts? I can provide my .edu email as verification.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T16:30:00Z",
+      "attachments": [],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Ubuntu",
+        "location": "Boston, MA"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "general",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "sales_team",
+        "priority": 30
+      }
+    },
+    {
+      "id": "TICK-007",
+      "customerId": "CUST-ENTERPRISE-002",
+      "customerTier": "enterprise",
+      "customerLTV": 500000,
+      "email": "operations@megacorp.com",
+      "subject": "Database connection timeouts affecting 5000+ users",
+      "message": "We're experiencing critical database connection timeouts (error: DB_CONN_TIMEOUT) affecting our entire East Coast operations. Over 5000 users cannot access the system. This started 30 minutes ago after your latest deployment. We need immediate escalation and a status update every 15 minutes. Our SLA requires 99.99% uptime.",
+      "channel": "phone",
+      "timestamp": "2025-01-15T07:00:00Z",
+      "attachments": ["error_logs.zip", "monitoring_dashboard.png"],
+      "previousTickets": 12,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows Server",
+        "location": "Boston, MA"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "technical",
+        "sentiment": "angry",
+        "intent": "troubleshooting",
+        "routing": "backend_team",
+        "priority": 100
+      }
+    },
+    {
+      "id": "TICK-008",
+      "customerId": "CUST-STANDARD-234",
+      "customerTier": "standard",
+      "customerLTV": 8000,
+      "email": "marketing@agency.com",
+      "subject": "API rate limits too restrictive",
+      "message": "We're hitting your API rate limits constantly even though we're well within our paid tier limits. Current limit is 100 requests per minute but we need at least 500 for our integration to work properly. Can you increase our limits or do we need to upgrade?",
+      "channel": "email",
+      "timestamp": "2025-01-15T13:45:00Z",
+      "attachments": ["api_usage_stats.csv"],
+      "previousTickets": 2,
+      "metadata": {
+        "browser": "Firefox",
+        "os": "macOS",
+        "location": "Los Angeles, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "medium",
+        "category": "technical",
+        "sentiment": "frustrated",
+        "intent": "upgrade",
+        "routing": "technical_support",
+        "priority": 60
+      }
+    },
+    {
+      "id": "TICK-009",
+      "customerId": "CUST-PREMIUM-033",
+      "customerTier": "premium",
+      "customerLTV": 45000,
+      "email": "legal@lawfirm.com",
+      "subject": "GDPR data deletion request - urgent compliance issue",
+      "message": "We need to delete all data for our client John Doe (user ID: USER-99887) immediately due to GDPR Article 17 'Right to be forgotten' request. This must be completed within 24 hours to maintain compliance. Please confirm when deletion is complete and provide certification.",
+      "channel": "email",
+      "timestamp": "2025-01-15T10:30:00Z",
+      "attachments": ["gdpr_request.pdf"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Safari",
+        "os": "macOS",
+        "location": "London, UK"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "compliance",
+        "sentiment": "neutral",
+        "intent": "data_deletion",
+        "routing": "legal_team",
+        "priority": 95
+      }
+    },
+    {
+      "id": "TICK-010",
+      "customerId": "CUST-FREE-567",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "blogger@wordpress.com",
+      "subject": "This is the worst service ever!!!",
+      "message": "Your free tier is basically useless! Hidden limitations everywhere, constant upselling, and now you're showing ads? I'm writing a blog post about how terrible your service is compared to the alternatives. Deleting my account right now!",
+      "channel": "social",
+      "timestamp": "2025-01-15T18:00:00Z",
+      "attachments": [],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Android",
+        "location": "Miami, FL"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "general",
+        "sentiment": "angry",
+        "intent": "cancellation",
+        "routing": "retention_team",
+        "priority": 40
+      }
+    },
+    {
+      "id": "TICK-011",
+      "customerId": "CUST-ENTERPRISE-008",
+      "customerTier": "enterprise",
+      "customerLTV": 180000,
+      "email": "procurement@manufacturing.com",
+      "subject": "Contract renewal - need custom SLA terms",
+      "message": "Our annual contract is up for renewal next month. We need to discuss custom SLA terms including 99.99% uptime guarantee, 24/7 phone support, and dedicated account manager. Also requesting 15% discount for 3-year commitment. Please schedule a call with decision makers this week.",
+      "channel": "email",
+      "timestamp": "2025-01-15T09:00:00Z",
+      "attachments": ["current_contract.pdf", "sla_requirements.docx"],
+      "previousTickets": 8,
+      "metadata": {
+        "browser": "Edge",
+        "os": "Windows 11",
+        "location": "Detroit, MI"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "account",
+        "sentiment": "neutral",
+        "intent": "upgrade",
+        "routing": "sales_team",
+        "priority": 85
+      }
+    },
+    {
+      "id": "TICK-012",
+      "customerId": "CUST-STANDARD-445",
+      "customerTier": "standard",
+      "customerLTV": 3000,
+      "email": "developer@startup.com",
+      "subject": "Webhook delivery failures",
+      "message": "Our webhooks have been failing intermittently for the past 3 days. About 30% are not being delivered. No errors on our end, and your status page shows everything is operational. Here are some failed webhook IDs: WH-123456, WH-123457, WH-123458. This is impacting our automation workflows.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T15:15:00Z",
+      "attachments": ["webhook_logs.json"],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Linux",
+        "location": "Denver, CO"
+      },
+      "expectedAnalysis": {
+        "urgency": "medium",
+        "category": "technical",
+        "sentiment": "frustrated",
+        "intent": "troubleshooting",
+        "routing": "technical_support",
+        "priority": 65
+      }
+    },
+    {
+      "id": "TICK-013",
+      "customerId": "CUST-PREMIUM-076",
+      "customerTier": "premium",
+      "customerLTV": 25000,
+      "email": "support@ecommerce.com",
+      "subject": "Integration with Shopify broken after your update",
+      "message": "Your latest API update broke our Shopify integration. Orders are not syncing and we have a Black Friday sale starting tomorrow! This is catastrophic timing. The integration was working perfectly until your v2.5 release yesterday. Please rollback or provide immediate fix.",
+      "channel": "phone",
+      "timestamp": "2025-01-15T20:00:00Z",
+      "attachments": ["integration_error.log"],
+      "previousTickets": 4,
+      "metadata": {
+        "browser": "Safari",
+        "os": "macOS",
+        "location": "Portland, OR"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "technical",
+        "sentiment": "angry",
+        "intent": "troubleshooting",
+        "routing": "senior_support",
+        "priority": 90
+      }
+    },
+    {
+      "id": "TICK-014",
+      "customerId": "CUST-FREE-890",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "hobbyist@yahoo.com",
+      "subject": "Thank you for the amazing product!",
+      "message": "Just wanted to say thank you for creating such an awesome free tier! I'm learning to code and your API has been perfect for my projects. The documentation is super clear too. Keep up the great work!",
+      "channel": "chat",
+      "timestamp": "2025-01-15T12:30:00Z",
+      "attachments": [],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Firefox",
+        "os": "Windows 10",
+        "location": "Phoenix, AZ"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "general",
+        "sentiment": "satisfied",
+        "intent": "feedback",
+        "routing": "customer_success",
+        "priority": 20
+      }
+    },
+    {
+      "id": "TICK-015",
+      "customerId": "CUST-ENTERPRISE-011",
+      "customerTier": "enterprise",
+      "customerLTV": 350000,
+      "email": "security@fintech.com",
+      "subject": "Suspicious activity detected on our account",
+      "message": "Our security team detected unusual API calls from IP addresses in countries we don't operate in. Over 10,000 requests in the last hour from Russia and China. We did not authorize these. Please investigate immediately and lock down our account. This could be a breach attempt.",
+      "channel": "email",
+      "timestamp": "2025-01-15T03:00:00Z",
+      "attachments": ["suspicious_activity.csv", "ip_list.txt"],
+      "previousTickets": 2,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows Server",
+        "location": "London, UK"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "security",
+        "sentiment": "frustrated",
+        "intent": "security_issue",
+        "routing": "security_team",
+        "priority": 100
+      }
+    },
+    {
+      "id": "TICK-016",
+      "customerId": "CUST-STANDARD-678",
+      "customerTier": "standard",
+      "customerLTV": 6000,
+      "email": "admin@nonprofit.org",
+      "subject": "Can we get nonprofit pricing?",
+      "message": "We're a registered 501(c)(3) nonprofit organization helping underprivileged youth learn coding. Currently paying $99/month which is stretching our budget. Do you offer special pricing for nonprofits? We can provide our tax-exempt certificate.",
+      "channel": "email",
+      "timestamp": "2025-01-15T14:00:00Z",
+      "attachments": ["501c3_certificate.pdf"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Safari",
+        "os": "macOS",
+        "location": "Atlanta, GA"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "billing",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "sales_team",
+        "priority": 45
+      }
+    },
+    {
+      "id": "TICK-017",
+      "customerId": "CUST-PREMIUM-091",
+      "customerTier": "premium",
+      "customerLTV": 40000,
+      "email": "cfo@saas.com",
+      "subject": "Invoice shows wrong tax rate - IRS audit issue",
+      "message": "Your last 3 invoices show incorrect tax rate (8.5% instead of 6.5% for our state). We're currently under IRS audit and need corrected invoices immediately. This discrepancy is causing major issues with our tax filings. Invoice numbers: INV-2024-1234, INV-2024-1235, INV-2024-1236.",
+      "channel": "email",
+      "timestamp": "2025-01-15T08:30:00Z",
+      "attachments": ["incorrect_invoices.pdf"],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows 11",
+        "location": "Dallas, TX"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "billing",
+        "sentiment": "frustrated",
+        "intent": "correction",
+        "routing": "finance_senior",
+        "priority": 85
+      }
+    },
+    {
+      "id": "TICK-018",
+      "customerId": "CUST-FREE-234",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "tester@gmail.com",
+      "subject": "Bug report: Button doesn't work on mobile",
+      "message": "The 'Export Data' button doesn't work on mobile browsers. Nothing happens when I tap it. Tested on both iPhone and Android. Works fine on desktop though.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T17:45:00Z",
+      "attachments": ["mobile_screenshot.png"],
+      "previousTickets": 2,
+      "metadata": {
+        "browser": "Mobile Safari",
+        "os": "iOS",
+        "location": "San Diego, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "technical",
+        "sentiment": "neutral",
+        "intent": "bug_report",
+        "routing": "frontend_team",
+        "priority": 35
+      }
+    },
+    {
+      "id": "TICK-019",
+      "customerId": "CUST-ENTERPRISE-015",
+      "customerTier": "enterprise",
+      "customerLTV": 420000,
+      "email": "it@healthcare.com",
+      "subject": "HIPAA compliance certification needed for audit",
+      "message": "Our annual HIPAA audit is next week. We need your latest HIPAA compliance certification, BAA (Business Associate Agreement), and security audit reports. Also need documentation on your data encryption methods and breach notification procedures. Time sensitive - auditors arrive Monday.",
+      "channel": "email",
+      "timestamp": "2025-01-15T11:15:00Z",
+      "attachments": ["audit_requirements.pdf"],
+      "previousTickets": 6,
+      "metadata": {
+        "browser": "Edge",
+        "os": "Windows 10",
+        "location": "Houston, TX"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "compliance",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "legal_team",
+        "priority": 90
+      }
+    },
+    {
+      "id": "TICK-020",
+      "customerId": "CUST-STANDARD-789",
+      "customerTier": "standard",
+      "customerLTV": 4500,
+      "email": "owner@restaurant.com",
+      "subject": "Downgrade from Standard to Free tier",
+      "message": "Business has been slow and we need to cut costs. Please downgrade our account from Standard to Free tier at the end of the billing cycle. Will we lose our historical data? Hope to upgrade again when things improve.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T16:00:00Z",
+      "attachments": [],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows 11",
+        "location": "Nashville, TN"
+      },
+      "expectedAnalysis": {
+        "urgency": "medium",
+        "category": "account",
+        "sentiment": "neutral",
+        "intent": "downgrade",
+        "routing": "retention_team",
+        "priority": 55
+      }
+    },
+    {
+      "id": "TICK-021",
+      "customerId": "CUST-PREMIUM-102",
+      "customerTier": "premium",
+      "customerLTV": 55000,
+      "email": "devops@techstartup.com",
+      "subject": "Performance degradation in EU region",
+      "message": "Experiencing 3x latency increase for all API calls in EU-WEST region since 6 AM UTC. Response times went from 200ms to 600ms+. This is affecting our European customers. Is there an ongoing issue? Our monitoring shows the problem is on your end.",
+      "channel": "email",
+      "timestamp": "2025-01-15T07:30:00Z",
+      "attachments": ["latency_graphs.png", "traceroute.txt"],
+      "previousTickets": 3,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Ubuntu",
+        "location": "Berlin, Germany"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "technical",
+        "sentiment": "frustrated",
+        "intent": "troubleshooting",
+        "routing": "infrastructure_team",
+        "priority": 80
+      }
+    },
+    {
+      "id": "TICK-022",
+      "customerId": "CUST-FREE-456",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "student2@college.edu",
+      "subject": "How to integrate with React?",
+      "message": "I'm trying to integrate your API with my React app but getting CORS errors. Is there a guide or example code somewhere? This is for my final year project.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T19:30:00Z",
+      "attachments": ["cors_error.png"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Firefox",
+        "os": "macOS",
+        "location": "Cambridge, MA"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "technical",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "technical_support",
+        "priority": 30
+      }
+    },
+    {
+      "id": "TICK-023",
+      "customerId": "CUST-ENTERPRISE-020",
+      "customerTier": "enterprise",
+      "customerLTV": 600000,
+      "email": "ceo@megacorp.com",
+      "subject": "Considering canceling - need executive discussion",
+      "message": "We're reviewing all vendor contracts for cost optimization. Your service costs us $50K/month but we're only using 40% of capacity. Either we need significant discount or additional features to justify this spend. Please have your executive team contact me directly.",
+      "channel": "email",
+      "timestamp": "2025-01-15T10:00:00Z",
+      "attachments": ["usage_analysis.xlsx"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Safari",
+        "os": "macOS",
+        "location": "San Francisco, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "account",
+        "sentiment": "frustrated",
+        "intent": "cancellation",
+        "routing": "executive_team",
+        "priority": 100
+      }
+    },
+    {
+      "id": "TICK-024",
+      "customerId": "CUST-STANDARD-321",
+      "customerTier": "standard",
+      "customerLTV": 7000,
+      "email": "qa@software.com",
+      "subject": "Found XSS vulnerability in your admin panel",
+      "message": "Our QA team discovered a reflected XSS vulnerability in your admin panel. The search field doesn't properly sanitize input. POC: <script>alert('XSS')</script>. This could be exploited to steal session cookies. Reporting this responsibly before it's exploited.",
+      "channel": "email",
+      "timestamp": "2025-01-15T13:00:00Z",
+      "attachments": ["xss_poc.html", "security_report.pdf"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows 10",
+        "location": "Austin, TX"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "security",
+        "sentiment": "neutral",
+        "intent": "bug_report",
+        "routing": "security_team",
+        "priority": 85
+      }
+    },
+    {
+      "id": "TICK-025",
+      "customerId": "CUST-PREMIUM-133",
+      "customerTier": "premium",
+      "customerLTV": 35000,
+      "email": "data@analytics.com",
+      "subject": "Data export taking over 24 hours",
+      "message": "Requested a full data export 26 hours ago and it's still processing. We need this for our monthly board meeting tomorrow morning. The export usually takes 2-3 hours max. Job ID: EXPORT-789456. This is becoming urgent.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T21:00:00Z",
+      "attachments": [],
+      "previousTickets": 2,
+      "metadata": {
+        "browser": "Edge",
+        "os": "Windows 11",
+        "location": "Chicago, IL"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "technical",
+        "sentiment": "frustrated",
+        "intent": "troubleshooting",
+        "routing": "backend_team",
+        "priority": 75
+      }
+    },
+    {
+      "id": "TICK-026",
+      "customerId": "CUST-FREE-789",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "freelancer@email.com",
+      "subject": "API documentation is outdated",
+      "message": "Your API docs still show v1 endpoints but those return 404. Wasted 2 hours trying to figure out why my code wasn't working. Please update the documentation to reflect the current API version.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T18:30:00Z",
+      "attachments": [],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Linux",
+        "location": "Toronto, Canada"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "general",
+        "sentiment": "frustrated",
+        "intent": "feedback",
+        "routing": "documentation_team",
+        "priority": 35
+      }
+    },
+    {
+      "id": "TICK-027",
+      "customerId": "CUST-ENTERPRISE-025",
+      "customerTier": "enterprise",
+      "customerLTV": 450000,
+      "email": "infrastructure@cloud.com",
+      "subject": "Need SSO integration with Okta by next week",
+      "message": "Our security policy requires SSO for all tools by end of month. We need Okta integration configured and tested by next Friday. This is a hard requirement - without SSO we'll have to migrate to another provider. Please confirm this can be delivered on time.",
+      "channel": "email",
+      "timestamp": "2025-01-15T09:45:00Z",
+      "attachments": ["sso_requirements.pdf"],
+      "previousTickets": 4,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "macOS",
+        "location": "Seattle, WA"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "feature",
+        "sentiment": "neutral",
+        "intent": "feature_request",
+        "routing": "engineering_team",
+        "priority": 95
+      }
+    },
+    {
+      "id": "TICK-028",
+      "customerId": "CUST-STANDARD-567",
+      "customerTier": "standard",
+      "customerLTV": 5500,
+      "email": "marketing@brand.com",
+      "subject": "White label options available?",
+      "message": "We'd like to offer your service to our clients under our own brand. Do you have white label options? What would be the pricing for that? We have about 50 clients who would be interested.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T15:30:00Z",
+      "attachments": [],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Safari",
+        "os": "macOS",
+        "location": "Los Angeles, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "medium",
+        "category": "general",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "sales_team",
+        "priority": 50
+      }
+    },
+    {
+      "id": "TICK-029",
+      "customerId": "CUST-PREMIUM-144",
+      "customerTier": "premium",
+      "customerLTV": 48000,
+      "email": "compliance@insurance.com",
+      "subject": "SOC 2 Type II report required for vendor review",
+      "message": "Our procurement team needs your latest SOC 2 Type II report for our vendor security review. This is required annually for all our technology vendors. Please send the report within 48 hours or our access may be suspended per company policy.",
+      "channel": "email",
+      "timestamp": "2025-01-15T12:15:00Z",
+      "attachments": [],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Edge",
+        "os": "Windows 10",
+        "location": "Hartford, CT"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "compliance",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "legal_team",
+        "priority": 80
+      }
+    },
+    {
+      "id": "TICK-030",
+      "customerId": "CUST-FREE-901",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "developer2@startup.com",
+      "subject": "Rate limiting not working as documented",
+      "message": "Docs say free tier gets 100 requests/minute but I'm getting rate limited after 50. Is this a bug or did the limits change? Here's my API key for reference: API_KEY_REDACTED",
+      "channel": "chat",
+      "timestamp": "2025-01-15T20:30:00Z",
+      "attachments": ["rate_limit_test.json"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Ubuntu",
+        "location": "Boulder, CO"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "technical",
+        "sentiment": "neutral",
+        "intent": "troubleshooting",
+        "routing": "technical_support",
+        "priority": 40
+      }
+    },
+    {
+      "id": "TICK-031",
+      "customerId": "CUST-ENTERPRISE-030",
+      "customerTier": "enterprise",
+      "customerLTV": 380000,
+      "email": "platform@retail.com",
+      "subject": "Black Friday prep - need 10x capacity",
+      "message": "Black Friday is in 2 weeks. We need to scale to handle 10x normal traffic. Last year we had outages that cost us millions. Need confirmation that infrastructure can handle 500K concurrent users and what additional costs will be.",
+      "channel": "phone",
+      "timestamp": "2025-01-15T08:00:00Z",
+      "attachments": ["traffic_projections.xlsx"],
+      "previousTickets": 7,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows Server",
+        "location": "Minneapolis, MN"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "technical",
+        "sentiment": "neutral",
+        "intent": "upgrade",
+        "routing": "infrastructure_team",
+        "priority": 100
+      }
+    },
+    {
+      "id": "TICK-032",
+      "customerId": "CUST-STANDARD-890",
+      "customerTier": "standard",
+      "customerLTV": 4000,
+      "email": "support@app.com",
+      "subject": "Mobile app crashes when offline",
+      "message": "Our mobile app using your SDK crashes whenever the device goes offline. Error: NULL_POINTER_EXCEPTION in NetworkManager.swift line 142. This is affecting thousands of our users. Using SDK version 3.2.1.",
+      "channel": "email",
+      "timestamp": "2025-01-15T14:45:00Z",
+      "attachments": ["crash_report.txt", "stack_trace.log"],
+      "previousTickets": 2,
+      "metadata": {
+        "browser": "N/A",
+        "os": "iOS",
+        "location": "Phoenix, AZ"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "technical",
+        "sentiment": "frustrated",
+        "intent": "bug_report",
+        "routing": "mobile_team",
+        "priority": 70
+      }
+    },
+    {
+      "id": "TICK-033",
+      "customerId": "CUST-PREMIUM-155",
+      "customerTier": "premium",
+      "customerLTV": 42000,
+      "email": "finance@consulting.com",
+      "subject": "Need payment method change from card to ACH",
+      "message": "Our accounting department requires all recurring payments over $1000/month to be via ACH transfer instead of credit card. Please send ACH setup instructions and update our payment method before the next billing cycle.",
+      "channel": "email",
+      "timestamp": "2025-01-15T11:45:00Z",
+      "attachments": [],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Firefox",
+        "os": "Windows 10",
+        "location": "Boston, MA"
+      },
+      "expectedAnalysis": {
+        "urgency": "medium",
+        "category": "billing",
+        "sentiment": "neutral",
+        "intent": "account_update",
+        "routing": "finance_team",
+        "priority": 65
+      }
+    },
+    {
+      "id": "TICK-034",
+      "customerId": "CUST-FREE-012",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "designer@portfolio.com",
+      "subject": "Can I use your logo in my portfolio?",
+      "message": "I created some designs for a project using your API. Can I include your logo and mention your company in my online portfolio? Want to make sure I'm not violating any trademark rules.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T17:00:00Z",
+      "attachments": ["portfolio_mockup.png"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Safari",
+        "os": "macOS",
+        "location": "Portland, OR"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "general",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "marketing_team",
+        "priority": 25
+      }
+    },
+    {
+      "id": "TICK-035",
+      "customerId": "CUST-ENTERPRISE-035",
+      "customerTier": "enterprise",
+      "customerLTV": 520000,
+      "email": "cto@bank.com",
+      "subject": "Data residency requirement - EU data must stay in EU",
+      "message": "Due to new regulations, all our EU customer data must be stored and processed within EU borders. Do you have EU-only data centers? We need written confirmation of data residency compliance or we'll need to find another solution. This is legally required by next quarter.",
+      "channel": "email",
+      "timestamp": "2025-01-15T06:30:00Z",
+      "attachments": ["regulatory_requirements.pdf"],
+      "previousTickets": 3,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows 10",
+        "location": "Frankfurt, Germany"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "compliance",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "legal_team",
+        "priority": 100
+      }
+    },
+    {
+      "id": "TICK-036",
+      "customerId": "CUST-STANDARD-123",
+      "customerTier": "standard",
+      "customerLTV": 6500,
+      "email": "product@mobile.com",
+      "subject": "Push notifications not working on Android 14",
+      "message": "After updating to Android 14, push notifications stopped working completely. No errors in logs, permissions are granted, but notifications never appear. This is affecting 40% of our user base who have updated.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T19:00:00Z",
+      "attachments": ["android_logs.txt"],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Chrome Mobile",
+        "os": "Android",
+        "location": "San Jose, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "technical",
+        "sentiment": "frustrated",
+        "intent": "bug_report",
+        "routing": "mobile_team",
+        "priority": 70
+      }
+    },
+    {
+      "id": "TICK-037",
+      "customerId": "CUST-PREMIUM-166",
+      "customerTier": "premium",
+      "customerLTV": 38000,
+      "email": "ops@logistics.com",
+      "subject": "API returning duplicate results in pagination",
+      "message": "When using pagination with limit=100&offset=200, we're getting duplicate records from previous pages. This started happening yesterday. It's causing our data sync to create duplicate entries. Endpoint: /api/v2/records",
+      "channel": "email",
+      "timestamp": "2025-01-15T13:30:00Z",
+      "attachments": ["duplicate_records.csv"],
+      "previousTickets": 2,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Linux",
+        "location": "Memphis, TN"
+      },
+      "expectedAnalysis": {
+        "urgency": "medium",
+        "category": "technical",
+        "sentiment": "frustrated",
+        "intent": "bug_report",
+        "routing": "backend_team",
+        "priority": 70
+      }
+    },
+    {
+      "id": "TICK-038",
+      "customerId": "CUST-FREE-345",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "researcher@university.edu",
+      "subject": "Using your API for academic research",
+      "message": "I'm conducting research on API usability for my PhD thesis. Would it be possible to get elevated rate limits for research purposes? I can provide details about my research and mention your company in publications.",
+      "channel": "email",
+      "timestamp": "2025-01-15T16:15:00Z",
+      "attachments": ["research_proposal.pdf"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Firefox",
+        "os": "Ubuntu",
+        "location": "Stanford, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "general",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "sales_team",
+        "priority": 30
+      }
+    },
+    {
+      "id": "TICK-039",
+      "customerId": "CUST-ENTERPRISE-040",
+      "customerTier": "enterprise",
+      "customerLTV": 280000,
+      "email": "devops@streaming.com",
+      "subject": "CDN cache invalidation not working",
+      "message": "We're pushing updates but CDN cache isn't invalidating. Users still seeing content from 48 hours ago despite multiple purge requests. This is critical for our live streaming platform. Purge request IDs: PURGE-111, PURGE-112, PURGE-113",
+      "channel": "phone",
+      "timestamp": "2025-01-15T22:00:00Z",
+      "attachments": ["cdn_config.json"],
+      "previousTickets": 5,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "macOS",
+        "location": "Los Angeles, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "technical",
+        "sentiment": "angry",
+        "intent": "troubleshooting",
+        "routing": "infrastructure_team",
+        "priority": 95
+      }
+    },
+    {
+      "id": "TICK-040",
+      "customerId": "CUST-STANDARD-456",
+      "customerTier": "standard",
+      "customerLTV": 5200,
+      "email": "admin@school.edu",
+      "subject": "Need bulk user import for new semester",
+      "message": "New semester starting next week. Need to import 500 student accounts. Is there a bulk import feature or API endpoint for this? CSV template would be helpful. Time sensitive as classes start Monday.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T10:45:00Z",
+      "attachments": ["student_list.csv"],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Edge",
+        "os": "Windows 11",
+        "location": "Columbus, OH"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "feature",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "technical_support",
+        "priority": 65
+      }
+    },
+    {
+      "id": "TICK-041",
+      "customerId": "CUST-PREMIUM-177",
+      "customerTier": "premium",
+      "customerLTV": 52000,
+      "email": "security@defense.com",
+      "subject": "Need FedRAMP certification status",
+      "message": "We're a government contractor and require FedRAMP certification for all cloud services. What's your current FedRAMP status? If not certified, what's your timeline? This is mandatory for contract renewal.",
+      "channel": "email",
+      "timestamp": "2025-01-15T07:15:00Z",
+      "attachments": ["fedramp_requirements.pdf"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows 10",
+        "location": "Washington, DC"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "compliance",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "legal_team",
+        "priority": 85
+      }
+    },
+    {
+      "id": "TICK-042",
+      "customerId": "CUST-FREE-678",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "gamer@twitch.tv",
+      "subject": "Can I stream using your service?",
+      "message": "I want to build a tool using your API for my Twitch stream. Are there any restrictions on commercial use for free tier accounts? Don't want to violate TOS.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T21:30:00Z",
+      "attachments": [],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows 11",
+        "location": "Las Vegas, NV"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "general",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "customer_success",
+        "priority": 25
+      }
+    },
+    {
+      "id": "TICK-043",
+      "customerId": "CUST-ENTERPRISE-045",
+      "customerTier": "enterprise",
+      "customerLTV": 410000,
+      "email": "infrastructure@ai.com",
+      "subject": "GPU instances needed for ML workloads",
+      "message": "We need GPU-enabled instances for our machine learning workloads. Current CPU instances are too slow for model training. Do you offer GPU compute? We need at least 8x A100 GPUs. Budget approved for $20K/month additional spend.",
+      "channel": "email",
+      "timestamp": "2025-01-15T09:15:00Z",
+      "attachments": ["ml_requirements.pdf"],
+      "previousTickets": 4,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Ubuntu",
+        "location": "Palo Alto, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "medium",
+        "category": "feature",
+        "sentiment": "neutral",
+        "intent": "upgrade",
+        "routing": "sales_team",
+        "priority": 75
+      }
+    },
+    {
+      "id": "TICK-044",
+      "customerId": "CUST-STANDARD-678",
+      "customerTier": "standard",
+      "customerLTV": 4800,
+      "email": "dev@agency.com",
+      "subject": "Sandbox environment broken",
+      "message": "Our sandbox environment has been down for 3 hours. Getting 503 errors on all requests. This is blocking our development team (8 developers). Production is fine but we can't test any new features. Environment ID: SANDBOX-123",
+      "channel": "chat",
+      "timestamp": "2025-01-15T15:45:00Z",
+      "attachments": ["503_errors.log"],
+      "previousTickets": 2,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "macOS",
+        "location": "Miami, FL"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "technical",
+        "sentiment": "frustrated",
+        "intent": "troubleshooting",
+        "routing": "technical_support",
+        "priority": 70
+      }
+    },
+    {
+      "id": "TICK-045",
+      "customerId": "CUST-PREMIUM-188",
+      "customerTier": "premium",
+      "customerLTV": 46000,
+      "email": "legal@media.com",
+      "subject": "DMCA takedown request",
+      "message": "One of your users is hosting copyrighted content that belongs to us. Please remove immediately. URL: https://yourservice.com/user/pirate123/content. This is a formal DMCA takedown notice. Failure to comply will result in legal action.",
+      "channel": "email",
+      "timestamp": "2025-01-15T12:00:00Z",
+      "attachments": ["dmca_notice.pdf", "copyright_proof.pdf"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Safari",
+        "os": "macOS",
+        "location": "New York, NY"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "legal",
+        "sentiment": "angry",
+        "intent": "complaint",
+        "routing": "legal_team",
+        "priority": 95
+      }
+    },
+    {
+      "id": "TICK-046",
+      "customerId": "CUST-FREE-890",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "blogger2@medium.com",
+      "subject": "Writing article about your API",
+      "message": "I'm writing a tutorial about your API for Medium. Could someone review it for technical accuracy before I publish? Want to make sure I'm not spreading misinformation.",
+      "channel": "chat",
+      "timestamp": "2025-01-15T18:15:00Z",
+      "attachments": ["draft_article.md"],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "macOS",
+        "location": "Austin, TX"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "general",
+        "sentiment": "neutral",
+        "intent": "information",
+        "routing": "marketing_team",
+        "priority": 30
+      }
+    },
+    {
+      "id": "TICK-047",
+      "customerId": "CUST-ENTERPRISE-050",
+      "customerTier": "enterprise",
+      "customerLTV": 550000,
+      "email": "operations@airlines.com",
+      "subject": "System outage affecting flight operations",
+      "message": "CRITICAL: Complete system outage affecting our flight operations dashboard. 200+ flights impacted. Passengers stranded. This is causing massive operational disruption. Need immediate escalation to your highest level of support. Every minute costs us thousands.",
+      "channel": "phone",
+      "timestamp": "2025-01-15T05:00:00Z",
+      "attachments": ["system_status.png"],
+      "previousTickets": 8,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Windows Server",
+        "location": "Atlanta, GA"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "technical",
+        "sentiment": "angry",
+        "intent": "troubleshooting",
+        "routing": "executive_team",
+        "priority": 100
+      }
+    },
+    {
+      "id": "TICK-048",
+      "customerId": "CUST-STANDARD-789",
+      "customerTier": "standard",
+      "customerLTV": 5800,
+      "email": "owner@shop.com",
+      "subject": "Refund for last month - service was down",
+      "message": "Your service was down for 3 days last month during our busiest season. We lost significant revenue. Requesting full refund for last month's subscription ($299). This is the third outage this year.",
+      "channel": "email",
+      "timestamp": "2025-01-15T14:30:00Z",
+      "attachments": ["downtime_log.pdf"],
+      "previousTickets": 3,
+      "metadata": {
+        "browser": "Safari",
+        "os": "macOS",
+        "location": "Denver, CO"
+      },
+      "expectedAnalysis": {
+        "urgency": "high",
+        "category": "billing",
+        "sentiment": "angry",
+        "intent": "refund",
+        "routing": "finance_senior",
+        "priority": 75
+      }
+    },
+    {
+      "id": "TICK-049",
+      "customerId": "CUST-PREMIUM-199",
+      "customerTier": "premium",
+      "customerLTV": 44000,
+      "email": "ciso@tech.com",
+      "subject": "Urgent: Log4j vulnerability patch status?",
+      "message": "With the recent Log4j vulnerability, we need immediate confirmation that your systems are patched. Our security team needs written confirmation for compliance. Also need details on which versions of Log4j you're using and mitigation steps taken.",
+      "channel": "email",
+      "timestamp": "2025-01-15T06:00:00Z",
+      "attachments": [],
+      "previousTickets": 1,
+      "metadata": {
+        "browser": "Chrome",
+        "os": "Linux",
+        "location": "San Francisco, CA"
+      },
+      "expectedAnalysis": {
+        "urgency": "critical",
+        "category": "security",
+        "sentiment": "frustrated",
+        "intent": "information",
+        "routing": "security_team",
+        "priority": 90
+      }
+    },
+    {
+      "id": "TICK-050",
+      "customerId": "CUST-FREE-999",
+      "customerTier": "free",
+      "customerLTV": 0,
+      "email": "curious@email.com",
+      "subject": "What programming language is your backend?",
+      "message": "Just curious - what tech stack are you using for your backend? I'm learning backend development and your API seems really fast. Would love to know what you're using!",
+      "channel": "chat",
+      "timestamp": "2025-01-15T20:45:00Z",
+      "attachments": [],
+      "previousTickets": 0,
+      "metadata": {
+        "browser": "Firefox",
+        "os": "Windows 10",
+        "location": "Philadelphia, PA"
+      },
+      "expectedAnalysis": {
+        "urgency": "low",
+        "category": "general",
+        "sentiment": "satisfied",
+        "intent": "information",
+        "routing": "customer_success",
+        "priority": 20
+      }
+    }
+  ],
+  "metadata": {
+    "totalTickets": 50,
+    "dateGenerated": "2025-01-15",
+    "categories": {
+      "billing": 7,
+      "technical": 15,
+      "security": 5,
+      "account": 4,
+      "feature": 5,
+      "general": 8,
+      "compliance": 4,
+      "legal": 2
+    },
+    "urgencyDistribution": {
+      "critical": 12,
+      "high": 15,
+      "medium": 13,
+      "low": 10
+    },
+    "customerTiers": {
+      "enterprise": 15,
+      "premium": 15,
+      "standard": 10,
+      "free": 10
+    }
+  }
+}

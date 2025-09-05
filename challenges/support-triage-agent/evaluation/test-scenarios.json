@@ -1,0 +1,224 @@
+{
+  "scenarios": [
+    {
+      "id": "TEST-001",
+      "name": "Critical Security Breach",
+      "description": "Test handling of security vulnerability reports from enterprise customers",
+      "input": {
+        "customerId": "CUST-ENTERPRISE-TEST",
+        "customerTier": "enterprise",
+        "subject": "SQL injection vulnerability in API",
+        "message": "Found SQL injection in /api/users endpoint allowing data extraction",
+        "attachments": ["poc.txt"]
+      },
+      "expectedBehavior": {
+        "urgency": "critical",
+        "category": "security",
+        "routing": "security_team",
+        "notifications": ["security@company.com", "ciso@company.com"],
+        "priority": ">=95",
+        "createIncident": true
+      }
+    },
+    {
+      "id": "TEST-002",
+      "name": "Simple Password Reset",
+      "description": "Test auto-resolution for common password reset requests",
+      "input": {
+        "customerId": "CUST-FREE-TEST",
+        "customerTier": "free",
+        "subject": "Forgot password",
+        "message": "I forgot my password, please help"
+      },
+      "expectedBehavior": {
+        "urgency": "low",
+        "category": "account",
+        "routing": "auto_resolve",
+        "autoResponse": true,
+        "template": "password_reset_instructions",
+        "priority": "<=30"
+      }
+    },
+    {
+      "id": "TEST-003",
+      "name": "Angry Premium Customer Billing",
+      "description": "Test retention team routing for upset valuable customers",
+      "input": {
+        "customerId": "CUST-PREMIUM-TEST",
+        "customerTier": "premium",
+        "customerLTV": 50000,
+        "subject": "Charged incorrectly AGAIN!!!",
+        "message": "This is the third time you've overcharged me. I'm done with this service!"
+      },
+      "expectedBehavior": {
+        "urgency": "high",
+        "category": "billing",
+        "sentiment": "angry",
+        "routing": ["retention_team", "senior_support"],
+        "priority": ">=80",
+        "managerNotification": true
+      }
+    },
+    {
+      "id": "TEST-004",
+      "name": "Enterprise Outage Report",
+      "description": "Test critical infrastructure issue handling",
+      "input": {
+        "customerId": "CUST-ENTERPRISE-TEST",
+        "customerTier": "enterprise",
+        "customerLTV": 500000,
+        "subject": "Complete system outage affecting all users",
+        "message": "Our entire platform is down. 10,000+ users affected. Every minute costs us thousands."
+      },
+      "expectedBehavior": {
+        "urgency": "critical",
+        "category": "technical",
+        "routing": ["infrastructure_team", "executive_team"],
+        "priority": "100",
+        "createIncident": true,
+        "escalationTime": "immediate"
+      }
+    },
+    {
+      "id": "TEST-005",
+      "name": "GDPR Compliance Request",
+      "description": "Test legal team routing for data privacy requests",
+      "input": {
+        "customerId": "CUST-STANDARD-TEST",
+        "customerTier": "standard",
+        "subject": "GDPR Article 17 - Right to be forgotten",
+        "message": "Please delete all my personal data as per GDPR requirements"
+      },
+      "expectedBehavior": {
+        "urgency": "high",
+        "category": "compliance",
+        "routing": "legal_team",
+        "requiresVerification": true,
+        "complianceDeadline": "30 days",
+        "priority": ">=75"
+      }
+    },
+    {
+      "id": "TEST-006",
+      "name": "Feature Request from Free User",
+      "description": "Test low priority feature request handling",
+      "input": {
+        "customerId": "CUST-FREE-TEST",
+        "customerTier": "free",
+        "subject": "Can you add dark mode?",
+        "message": "It would be nice to have a dark mode option"
+      },
+      "expectedBehavior": {
+        "urgency": "low",
+        "category": "feature",
+        "routing": "product_team",
+        "priority": "<=35",
+        "createFeatureRequest": true
+      }
+    },
+    {
+      "id": "TEST-007",
+      "name": "Database Error Pattern",
+      "description": "Test technical team routing for database issues",
+      "input": {
+        "customerId": "CUST-STANDARD-TEST",
+        "customerTier": "standard",
+        "subject": "Getting DB_CONNECTION_TIMEOUT errors",
+        "message": "Seeing DB_CONNECTION_TIMEOUT errors for the past hour"
+      },
+      "expectedBehavior": {
+        "urgency": "high",
+        "category": "technical",
+        "routing": "backend_team",
+        "createJiraTicket": true,
+        "priority": ">=70",
+        "errorCode": "DB_CONNECTION_TIMEOUT"
+      }
+    },
+    {
+      "id": "TEST-008",
+      "name": "Refund Request High Amount",
+      "description": "Test finance approval for large refund requests",
+      "input": {
+        "customerId": "CUST-PREMIUM-TEST",
+        "customerTier": "premium",
+        "subject": "Refund request for $1,500",
+        "message": "Service was down last month, requesting refund for $1,500"
+      },
+      "expectedBehavior": {
+        "urgency": "high",
+        "category": "billing",
+        "intent": "refund",
+        "routing": "finance_senior",
+        "requiresApproval": true,
+        "amount": 1500,
+        "priority": ">=75"
+      }
+    },
+    {
+      "id": "TEST-009",
+      "name": "Mobile SDK Bug Report",
+      "description": "Test mobile team routing for SDK issues",
+      "input": {
+        "customerId": "CUST-STANDARD-TEST",
+        "customerTier": "standard",
+        "subject": "iOS SDK crashes on startup",
+        "message": "Your iOS SDK version 3.2.1 crashes immediately when app launches"
+      },
+      "expectedBehavior": {
+        "urgency": "medium",
+        "category": "technical",
+        "routing": "mobile_team",
+        "createGithubIssue": true,
+        "priority": ">=60",
+        "platform": "iOS"
+      }
+    },
+    {
+      "id": "TEST-010",
+      "name": "Cancellation Threat Enterprise",
+      "description": "Test executive escalation for enterprise cancellation",
+      "input": {
+        "customerId": "CUST-ENTERPRISE-TEST",
+        "customerTier": "enterprise",
+        "customerLTV": 600000,
+        "subject": "Considering canceling our $50K/month contract",
+        "message": "Not seeing value, will cancel unless we get 50% discount"
+      },
+      "expectedBehavior": {
+        "urgency": "critical",
+        "category": "account",
+        "intent": "cancellation",
+        "routing": ["retention_team", "executive_team"],
+        "priority": "100",
+        "scheduleCall": true,
+        "offerIncentive": true
+      }
+    }
+  ],
+  "validationRules": {
+    "priorityRange": {
+      "min": 0,
+      "max": 100,
+      "description": "Priority must be between 0 and 100"
+    },
+    "responseTime": {
+      "maxMilliseconds": 2000,
+      "description": "Analysis should complete within 2 seconds"
+    },
+    "confidenceThreshold": {
+      "minimum": 0.7,
+      "description": "Classification confidence should be at least 70%"
+    },
+    "requiredFields": [
+      "urgency",
+      "category",
+      "routing",
+      "priority"
+    ]
+  },
+  "successCriteria": {
+    "accuracyThreshold": 0.85,
+    "description": "At least 85% of test scenarios must pass validation"
+  }
+}

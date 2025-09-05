@@ -1,0 +1,376 @@
+{
+  "rules": [
+    {
+      "id": "RULE-001",
+      "name": "Critical Security Issues",
+      "priority": 1,
+      "conditions": {
+        "any": [
+          {"field": "category", "operator": "equals", "value": "security"},
+          {"field": "message", "operator": "contains", "value": ["breach", "vulnerability", "exploit", "hack"]},
+          {"field": "subject", "operator": "contains", "value": ["security", "vulnerability", "breach"]}
+        ]
+      },
+      "actions": {
+        "routeTo": "security_team",
+        "setPriority": "critical",
+        "notify": ["security@company.com", "ciso@company.com"],
+        "createIncident": true,
+        "escalationTime": "immediate"
+      }
+    },
+    {
+      "id": "RULE-002",
+      "name": "Enterprise Customer Issues",
+      "priority": 2,
+      "conditions": {
+        "all": [
+          {"field": "customerTier", "operator": "equals", "value": "enterprise"}
+        ]
+      },
+      "actions": {
+        "routeTo": "senior_support",
+        "priorityBoost": 20,
+        "autoEscalate": true,
+        "maxWaitTime": "30 minutes",
+        "notifyAccountManager": true
+      }
+    },
+    {
+      "id": "RULE-003",
+      "name": "High Value Billing Issues",
+      "priority": 3,
+      "conditions": {
+        "all": [
+          {"field": "category", "operator": "equals", "value": "billing"},
+          {"field": "amount", "operator": "greaterThan", "value": 1000}
+        ]
+      },
+      "actions": {
+        "routeTo": "finance_senior",
+        "requiresApproval": true,
+        "sla": "2 hours",
+        "priorityBoost": 15
+      }
+    },
+    {
+      "id": "RULE-004",
+      "name": "Angry Premium Customers",
+      "priority": 4,
+      "conditions": {
+        "all": [
+          {"field": "sentiment", "operator": "equals", "value": "angry"},
+          {"field": "customerTier", "operator": "in", "value": ["premium", "enterprise"]},
+          {"field": "customerLTV", "operator": "greaterThan", "value": 10000}
+        ]
+      },
+      "actions": {
+        "routeTo": "retention_team",
+        "priorityBoost": 15,
+        "managerNotification": true,
+        "offerCompensation": true
+      }
+    },
+    {
+      "id": "RULE-005",
+      "name": "Database/Infrastructure Errors",
+      "priority": 5,
+      "conditions": {
+        "any": [
+          {"field": "errorCode", "operator": "startsWith", "value": "DB_"},
+          {"field": "message", "operator": "contains", "value": ["database", "connection timeout", "infrastructure"]}
+        ]
+      },
+      "actions": {
+        "routeTo": "backend_team",
+        "createJiraTicket": true,
+        "setPriority": "high",
+        "notifyOnCall": true
+      }
+    },
+    {
+      "id": "RULE-006",
+      "name": "Password Reset - Auto Resolution",
+      "priority": 6,
+      "conditions": {
+        "all": [
+          {"field": "intent", "operator": "equals", "value": "password_reset"},
+          {"field": "customerTier", "operator": "in", "value": ["free", "standard"]}
+        ]
+      },
+      "actions": {
+        "autoResolve": true,
+        "sendTemplate": "password_reset_instructions",
+        "noAgentNeeded": true,
+        "closeAfterResponse": true
+      }
+    },
+    {
+      "id": "RULE-007",
+      "name": "Compliance/Legal Issues",
+      "priority": 7,
+      "conditions": {
+        "any": [
+          {"field": "category", "operator": "equals", "value": "compliance"},
+          {"field": "message", "operator": "contains", "value": ["GDPR", "HIPAA", "SOC", "FedRAMP", "DMCA"]},
+          {"field": "subject", "operator": "contains", "value": ["compliance", "audit", "legal"]}
+        ]
+      },
+      "actions": {
+        "routeTo": "legal_team",
+        "setPriority": "high",
+        "requiresDocumentation": true,
+        "trackCompliance": true
+      }
+    },
+    {
+      "id": "RULE-008",
+      "name": "Feature Requests",
+      "priority": 8,
+      "conditions": {
+        "all": [
+          {"field": "category", "operator": "equals", "value": "feature"},
+          {"field": "intent", "operator": "equals", "value": "feature_request"}
+        ]
+      },
+      "actions": {
+        "routeTo": "product_team",
+        "createFeatureRequest": true,
+        "setPriority": "low",
+        "sendAcknowledgment": true
+      }
+    },
+    {
+      "id": "RULE-009",
+      "name": "Refund Requests",
+      "priority": 9,
+      "conditions": {
+        "all": [
+          {"field": "intent", "operator": "equals", "value": "refund"}
+        ]
+      },
+      "actions": {
+        "routeTo": "finance_team",
+        "requiresApproval": true,
+        "checkRefundEligibility": true,
+        "maxRefundAutoApprove": 500
+      }
+    },
+    {
+      "id": "RULE-010",
+      "name": "Service Outage Reports",
+      "priority": 10,
+      "conditions": {
+        "any": [
+          {"field": "message", "operator": "contains", "value": ["outage", "down", "not working", "can't access"]},
+          {"field": "urgency", "operator": "equals", "value": "critical"},
+          {"field": "affectedUsers", "operator": "greaterThan", "value": 100}
+        ]
+      },
+      "actions": {
+        "routeTo": "infrastructure_team",
+        "createIncident": true,
+        "setPriority": "critical",
+        "notifyStatusPage": true,
+        "escalationTime": "5 minutes"
+      }
+    },
+    {
+      "id": "RULE-011",
+      "name": "Cancellation Threat - Retention",
+      "priority": 11,
+      "conditions": {
+        "any": [
+          {"field": "intent", "operator": "equals", "value": "cancellation"},
+          {"field": "message", "operator": "contains", "value": ["cancel", "competitor", "switching", "leaving"]}
+        ]
+      },
+      "actions": {
+        "routeTo": "retention_team",
+        "offerIncentive": true,
+        "scheduleCall": true,
+        "priorityBoost": 10
+      }
+    },
+    {
+      "id": "RULE-012",
+      "name": "Mobile SDK Issues",
+      "priority": 12,
+      "conditions": {
+        "all": [
+          {"field": "category", "operator": "equals", "value": "technical"},
+          {"field": "message", "operator": "contains", "value": ["SDK", "mobile", "iOS", "Android", "crash"]}
+        ]
+      },
+      "actions": {
+        "routeTo": "mobile_team",
+        "createGithubIssue": true,
+        "setPriority": "medium",
+        "requiresTestDevice": true
+      }
+    },
+    {
+      "id": "RULE-013",
+      "name": "API Rate Limit Issues",
+      "priority": 13,
+      "conditions": {
+        "any": [
+          {"field": "message", "operator": "contains", "value": ["rate limit", "429", "too many requests"]},
+          {"field": "errorCode", "operator": "equals", "value": "RATE_LIMIT_EXCEEDED"}
+        ]
+      },
+      "actions": {
+        "routeTo": "technical_support",
+        "checkUsageHistory": true,
+        "suggestUpgrade": true,
+        "temporaryLimitIncrease": true
+      }
+    },
+    {
+      "id": "RULE-014",
+      "name": "Data Privacy Requests",
+      "priority": 14,
+      "conditions": {
+        "any": [
+          {"field": "intent", "operator": "equals", "value": "data_deletion"},
+          {"field": "message", "operator": "contains", "value": ["delete my data", "right to be forgotten", "privacy"]}
+        ]
+      },
+      "actions": {
+        "routeTo": "legal_team",
+        "requiresVerification": true,
+        "complianceDeadline": "30 days",
+        "auditLog": true
+      }
+    },
+    {
+      "id": "RULE-015",
+      "name": "Default Routing",
+      "priority": 999,
+      "conditions": {
+        "all": [
+          {"field": "*", "operator": "any", "value": "*"}
+        ]
+      },
+      "actions": {
+        "routeTo": "general_support",
+        "setPriority": "medium",
+        "standardSLA": true
+      }
+    }
+  ],
+  "teams": {
+    "security_team": {
+      "name": "Security Team",
+      "email": "security@company.com",
+      "slack": "#security-incidents",
+      "oncall": true,
+      "escalation": ["security_lead", "ciso", "cto"]
+    },
+    "backend_team": {
+      "name": "Backend Engineering",
+      "email": "backend@company.com",
+      "slack": "#backend-support",
+      "oncall": true,
+      "escalation": ["backend_lead", "engineering_manager", "cto"]
+    },
+    "frontend_team": {
+      "name": "Frontend Engineering",
+      "email": "frontend@company.com",
+      "slack": "#frontend-support",
+      "oncall": false,
+      "escalation": ["frontend_lead", "engineering_manager"]
+    },
+    "mobile_team": {
+      "name": "Mobile Development",
+      "email": "mobile@company.com",
+      "slack": "#mobile-support",
+      "oncall": false,
+      "escalation": ["mobile_lead", "engineering_manager"]
+    },
+    "infrastructure_team": {
+      "name": "Infrastructure/DevOps",
+      "email": "infrastructure@company.com",
+      "slack": "#infrastructure",
+      "oncall": true,
+      "escalation": ["devops_lead", "infrastructure_manager", "cto"]
+    },
+    "finance_team": {
+      "name": "Finance",
+      "email": "finance@company.com",
+      "slack": "#finance-support",
+      "oncall": false,
+      "escalation": ["finance_manager", "cfo"]
+    },
+    "finance_senior": {
+      "name": "Senior Finance",
+      "email": "finance-senior@company.com",
+      "slack": "#finance-escalations",
+      "oncall": false,
+      "escalation": ["finance_director", "cfo"]
+    },
+    "legal_team": {
+      "name": "Legal/Compliance",
+      "email": "legal@company.com",
+      "slack": "#legal-compliance",
+      "oncall": false,
+      "escalation": ["legal_counsel", "general_counsel"]
+    },
+    "product_team": {
+      "name": "Product Management",
+      "email": "product@company.com",
+      "slack": "#product-feedback",
+      "oncall": false,
+      "escalation": ["product_manager", "head_of_product"]
+    },
+    "sales_team": {
+      "name": "Sales",
+      "email": "sales@company.com",
+      "slack": "#sales-support",
+      "oncall": false,
+      "escalation": ["sales_manager", "vp_sales"]
+    },
+    "retention_team": {
+      "name": "Customer Retention",
+      "email": "retention@company.com",
+      "slack": "#save-team",
+      "oncall": false,
+      "escalation": ["retention_manager", "vp_customer_success"]
+    },
+    "senior_support": {
+      "name": "Senior Support",
+      "email": "senior-support@company.com",
+      "slack": "#senior-support",
+      "oncall": true,
+      "escalation": ["support_manager", "director_support"]
+    },
+    "technical_support": {
+      "name": "Technical Support",
+      "email": "tech-support@company.com",
+      "slack": "#tech-support",
+      "oncall": false,
+      "escalation": ["senior_support", "support_manager"]
+    },
+    "general_support": {
+      "name": "General Support",
+      "email": "support@company.com",
+      "slack": "#general-support",
+      "oncall": false,
+      "escalation": ["senior_support", "support_manager"]
+    },
+    "customer_success": {
+      "name": "Customer Success",
+      "email": "success@company.com",
+      "slack": "#customer-success",
+      "oncall": false,
+      "escalation": ["cs_manager", "vp_customer_success"]
+    },
+    "executive_team": {
+      "name": "Executive Team",
+      "email": "executives@company.com",
+      "slack": "#executive-escalations",
+      "oncall": true,
+      "escalation": ["ceo"]
+    }
+  }
+}

@@ -1,176 +1,201 @@
 # AgenticAnts Technical Interview Repository
-## Real Estate Notes Application with Natural Language Search
 
-Welcome to the AgenticAnts technical interview! This repository contains everything you need to complete the advanced coding challenge focused on building intelligent search capabilities for real estate professionals.
+Welcome to the AgenticAnts technical interview! Choose your challenge based on the position you're interviewing for.
 
-## 📋 Interview Structure
+## 🎯 Choose Your Challenge
 
-- **Duration:** 1 hour total
-  - 45 minutes: Coding challenge
-  - 15 minutes: Code review and discussion
-- **Tools:** You're encouraged to use AI assistants (Claude, Cursor, GitHub Copilot, ChatGPT, etc.)
-- **Focus:** Building AI-powered search functionality with full-stack implementation
+### [🏠 Challenge 1: Real Estate Search](./challenges/real-estate-search/)
+**Position:** Full-Stack Developer with AI Integration  
+**Duration:** 1 hour  
+**Focus:** Natural language search, semantic understanding, full-stack implementation  
 
-## 🎯 Challenge Overview
+Build a notes application for real estate agents with AI-powered natural language search. Search for clients using queries like "3 bed 2 bath under 500k" or "families needing good schools."
 
-Build a **full-stack real estate notes application** that enables real estate agents to:
+[**Start Real Estate Challenge →**](./challenges/real-estate-search/)
 
-1. **Create and manage detailed meeting notes** with client requirements
-2. **Search notes using natural language** queries like:
-   - "Show me all clients looking for 3-bedroom homes under $500k"
-   - "Find first-time buyers who need good schools"
-   - "Which clients are ready to buy immediately?"
-3. **Import comprehensive test data** for immediate testing
-4. **Demonstrate AI/LLM integration** for semantic understanding
+---
 
-This challenge tests your ability to integrate modern AI capabilities with traditional web development to solve real business problems.
+### [🤖 Challenge 2: AI Support Triage Agent](./challenges/support-triage-agent/)
+**Position:** AI Engineer / ML Engineer  
+**Duration:** 1 hour  
+**Focus:** AI agent design, LLM orchestration, complex business logic  
 
-## 🚀 Getting Started
+Build an intelligent support ticket triage system that analyzes, classifies, and routes customer support tickets using AI. Implement sophisticated routing rules, priority calculation, and automated responses.
 
-### Step 1: Read the Challenge
-Start by reading [CHALLENGE.md](./CHALLENGE.md) for the complete requirements, technical specifications, and evaluation criteria.
+[**Start Support Agent Challenge →**](./challenges/support-triage-agent/)
 
-### Step 2: Choose Your Tech Stack
-Pick from one of our starter templates or build from scratch:
-- [TypeScript/Express](./starters/typescript) - Type-safe backend with Express
-- [Node.js/Express](./starters/nodejs) - Simple JavaScript backend
-- [Python/FastAPI](./starters/python) - Python with auto-generated API docs
+---
 
-### Step 3: Load Test Data
-Import the realistic real estate meeting notes from `test-data/meeting-notes.json` (20+ detailed client profiles) to test your natural language search implementation.
+## 🚀 Quick Start Guide
 
-### Step 4: Implement Core Features
-- Full CRUD API for meeting notes
-- Database persistence (SQLite/PostgreSQL)
-- Frontend interface for creating and viewing notes
-- **Natural language search functionality** (primary focus)
+### Step 1: Choose Your Challenge
+Click on one of the challenges above to read the detailed requirements.
 
-### Step 5: Test Your Search
-Use the provided test scenarios to validate your implementation handles complex queries effectively.
+### Step 2: Select a Starter Template
+Pick the starter that matches your preferred tech stack:
+
+```bash
+# Minimal starter (recommended for flexibility)
+cd starters/minimal
+npm install
+npm run dev
+
+# TypeScript starter
+cd starters/typescript
+npm install
+npm run dev
+
+# Python starter
+cd starters/python
+pip install -r requirements.txt
+uvicorn server:app --reload
+```
+
+### Step 3: Import Test Data
+Each challenge includes realistic test data:
+- Real Estate: 20+ detailed meeting notes
+- Support Agent: 50+ diverse support tickets
+
+### Step 4: Implement & Test
+- Focus on the primary requirements first
+- Use the provided test scripts to validate your solution
+- Leverage AI tools (Claude, Cursor, Copilot) - they're encouraged!
 
 ## 📁 Repository Structure
 
 ```
 agentic-ants-interview/
-├── CHALLENGE.md              # Complete challenge requirements
-├── README.md                 # This file
-├── test-data/
-│   └── meeting-notes.json    # Realistic real estate client data
-├── starters/                 # Optional starter templates
-│   ├── typescript/           # TypeScript with Express
-│   ├── nodejs/               # Node.js with Express
-│   └── python/               # Python with FastAPI
-└── test-solution.sh          # Automated testing script
+├── challenges/
+│   ├── real-estate-search/      # Full-stack + NLP search challenge
+│   │   ├── README.md            # Challenge overview
+│   │   ├── REQUIREMENTS.md      # Detailed specifications
+│   │   ├── test-data/           # Sample meeting notes
+│   │   └── test-solution.sh     # Automated tests
+│   │
+│   └── support-triage-agent/    # AI agent challenge
+│       ├── README.md            # Challenge overview
+│       ├── REQUIREMENTS.md      # Detailed specifications
+│       ├── test-data/           # 50+ support tickets
+│       ├── evaluation/          # Test scenarios & rubric
+│       └── test-solution.sh     # Automated tests
+│
+└── starters/
+    ├── minimal/                 # Minimal Express.js starter
+    ├── typescript/              # TypeScript with type safety
+    └── python/                  # Python FastAPI starter
 ```
 
-## 🧪 Test Data Highlights
+## ⏱️ Interview Format
 
-The `test-data/meeting-notes.json` includes diverse scenarios:
-- **First-time buyers** with specific school district needs
-- **Investment property** seekers looking for cash flow
-- **Empty nesters** downsizing to luxury condos
-- **Military families** needing quick relocation
-- **Cash buyers** ready for immediate purchase
-- **Families** requiring larger homes in safe neighborhoods
+**Total Duration:** 1 hour
+- **45 minutes:** Coding challenge
+- **15 minutes:** Code review and discussion
 
-Perfect for testing natural language queries like:
-- "urgent buyers with pre-approval"
-- "families with kids looking for good schools" 
-- "investment property buyers"
-- "clients interested in Westside neighborhood"
+### Time Management Tips
+- **0-10 min:** Read requirements, choose tech stack, setup
+- **10-30 min:** Build core functionality (API/agent logic)
+- **30-40 min:** Implement AI features (search/analysis)
+- **40-45 min:** Test with provided data
+- **45-60 min:** Demo and discuss your solution
 
-## 💡 What Makes This Challenge Unique
+## 🎓 What We're Evaluating
 
-### Traditional Interview vs. AgenticAnts Interview:
+### Both Challenges
+- **AI Integration Quality** - How well you leverage LLMs and AI tools
+- **Problem-Solving Approach** - Breaking down complex requirements
+- **Code Organization** - Clean, maintainable architecture
+- **Practical Thinking** - Real-world considerations
 
-**Traditional:** Build a simple CRUD API  
-**AgenticAnts:** Build intelligent search that understands user intent
+### Challenge-Specific Focus
 
-**Traditional:** Focus on basic database queries  
-**AgenticAnts:** Integrate AI/LLM capabilities for semantic search
+**Real Estate Search:**
+- Natural language understanding accuracy
+- Search result relevance
+- Full-stack implementation
 
-**Traditional:** Test with simple data  
-**AgenticAnts:** Work with realistic, complex real estate data
+**Support Agent:**
+- LLM prompt engineering
+- Business logic complexity
+- Agent architecture design
 
-**Traditional:** Demonstrate coding skills  
-**AgenticAnts:** Show how you leverage AI tools to build practical solutions
+## 💡 Tips for Success
 
-## 🎯 What We're Looking For
+### Do's ✅
+- Use AI assistants actively (Claude, Cursor, Copilot)
+- Focus on core requirements first
+- Test with the provided data
+- Keep your code organized
+- Ask clarifying questions
 
-### Primary Evaluation (70%):
-1. **Natural Language Search Quality** - Does it actually understand queries?
-2. **Search Result Accuracy** - Returns relevant, ranked results
-3. **AI Tool Integration** - Smart use of LLMs, embeddings, or NLP
-4. **Problem-solving Approach** - How you tackle complex requirements
+### Don'ts ❌
+- Don't over-engineer the solution
+- Don't spend too much time on UI styling
+- Don't implement authentication
+- Don't worry about production deployment
+- Don't build features not in requirements
 
-### Secondary Evaluation (30%):
-1. **Full-stack Implementation** - Working frontend and backend
-2. **Code Quality** - Clean, organized, maintainable code
-3. **User Experience** - Functional and intuitive interface
-4. **Technical Communication** - Explain your implementation choices
+## 🛠️ Recommended AI Tools
 
-## 🔧 Technical Approaches You Might Consider
+- **Claude Desktop** - For code generation and problem solving
+- **Cursor** - AI-powered IDE
+- **GitHub Copilot** - Inline code suggestions
+- **ChatGPT** - General assistance
+- **v0** - For quick UI components
 
-- **Embedding-based search** using OpenAI, Cohere, or Sentence Transformers
-- **LLM-powered search** with structured prompts to GPT/Claude
-- **Hybrid approach** combining keyword search with AI enhancement
-- **Entity extraction** using spaCy or similar NLP libraries
-- **Vector databases** for semantic similarity matching
+## 📊 Testing Your Solution
 
-## ⏱️ Time Management Suggestion
+Each challenge includes an automated test script:
 
-- **0-10 min:** Read requirements, choose tech stack, set up project
-- **10-30 min:** Build basic CRUD API and database schema
-- **30-40 min:** Implement natural language search functionality
-- **40-45 min:** Create simple frontend and import test data
-- **45-60 min:** Demo your solution and discuss implementation
+```bash
+# Navigate to your challenge directory
+cd challenges/[your-challenge]/
 
-## 🎤 Discussion Topics (Final 15 Minutes)
+# Run the test script
+./test-solution.sh
+
+# Or specify a custom port
+./test-solution.sh 8080
+```
+
+## ❓ Frequently Asked Questions
+
+**Q: Can I use external APIs like OpenAI?**  
+A: Yes! AI integration is encouraged. Use any LLM API you're comfortable with.
+
+**Q: Do I need to implement a frontend?**  
+A: For Real Estate challenge: Yes, a simple UI is required. For Support Agent: Optional but bonus points for a dashboard.
+
+**Q: Can I use libraries and frameworks?**  
+A: Absolutely! Use whatever helps you build the best solution quickly.
+
+**Q: What if I can't finish everything?**  
+A: Focus on core functionality and be ready to discuss what you would do with more time.
+
+**Q: Should I use the test data provided?**  
+A: Yes! The test data is designed to showcase your solution's capabilities.
+
+## 🎤 Discussion Topics
 
 Be prepared to discuss:
-- Your natural language search implementation approach
-- Trade-offs between different AI/search techniques
-- How you'd scale this for 100,000+ notes
-- Performance vs. accuracy considerations
-- Privacy and security considerations for client data
-- Your experience using AI tools during development
-
-## 💻 AI Integration Examples
-
-### Embeddings Approach:
-```python
-# Convert notes to embeddings for semantic search
-from sentence_transformers import SentenceTransformer
-model = SentenceTransformer('all-MiniLM-L6-v2')
-embeddings = model.encode(note_texts)
-```
-
-### LLM Approach:
-```javascript
-// Use structured prompts for intelligent filtering
-const prompt = `Given these real estate meeting notes: ${notes}
-Find clients matching: "${query}"
-Return note IDs and relevance scores.`;
-```
+1. Your technical approach and architecture decisions
+2. How you integrated AI/LLM capabilities
+3. Trade-offs you made due to time constraints
+4. How you'd scale your solution
+5. Security and privacy considerations
+6. Your experience using AI tools during development
 
 ## 🏆 Success Criteria
 
 Your solution should demonstrate:
-- ✅ **Working natural language search** with realistic queries
-- ✅ **Full-stack implementation** with database persistence
-- ✅ **Test data integration** showing practical usage
-- ✅ **Clean code architecture** with separation of concerns
-- ✅ **AI tool utilization** for enhanced functionality
-- ✅ **Clear communication** of technical decisions
+- ✅ Core functionality working end-to-end
+- ✅ Effective AI/LLM integration
+- ✅ Clean, organized code
+- ✅ Practical problem-solving
+- ✅ Ability to work with test data
+- ✅ Clear technical communication
 
-## ❓ Questions?
+---
 
-Feel free to ask about:
-- Technical requirements or constraints
-- Expected search behavior
-- Evaluation criteria
-- Available tools and resources
+**Good luck! We're excited to see what you build!** 🚀
 
-Remember: We're more interested in seeing your problem-solving process and ability to integrate AI tools than perfect implementation. Focus on building something that actually works and can be demonstrated effectively.
-
-**Good luck building the future of intelligent real estate tools!** 🏠🔍🤖
+*Remember: We value practical problem-solving and smart use of AI tools over perfect code. Focus on demonstrating your approach to building intelligent applications.*
